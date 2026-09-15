@@ -9,6 +9,23 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [78.0.0] — six adopted professions, fifteen creative formats, and investing literacy — 2026-09-15
+
+**1174 skills · 131 bundles** (from 1117 · 124 at v77).
+
+### Added
+- **pm-investing-literacy** (5) — reading a company's accounts before believing its highlights, every figure page-referenced and anything missing marked "not disclosed in this report": `annual-report-tutor`, `audited-boundary-check`, `profit-to-cash-walk`, `company-compare-same-definitions`, `investing-vocabulary-explainer`. Educational, not financial advice.
+- **Six adopted professions** (36) — `pm-dentistry`, `pm-pharmacy`, `pm-architecture`, `pm-events`, `pm-fleet`, `pm-physio`, each with worked examples and a disambiguation index.
+- **Fifteen creative skills** across the library's five strongest formats — adversarial simulators (`the-loan-officer`, `the-planning-committee`, `the-school-appeal`, `the-union-table`, `the-ethics-board`), decoders (`funeral-pricing-decoder`, `franchise-decoder`, `care-home-contract-decoder`), computed skills with stdlib scripts (`fair-split`, `decision-tree-solver`), warm formats (`oral-history-kit`, `family-cookbook-archivist`, `household-constitution`), and meta-formats (`the-ruthless-editor`, `disagreeing-experts`).
+- `usage-based-pricing-model` — the gap the mining pipeline reported twice.
+- Eval-coverage ratchet (267 skills with curated cases), the first tier promotion, and a staleness board.
+- Conformance program, MCP disambiguation tool, contract suite for the 53 helper scripts, and a Python test matrix.
+
+### Changed
+- Playground first paint cut from 7.1 MB to 470 KB; `web/` now has a size budget.
+- Deprecation contract honoured across the MCP server and catalog; twelve retired names still resolve.
+- i18n status reports structural drift instead of accumulating it.
+
 ## [76.1.0] — craft: the incident-response spine goes flagship — 2026-08-10
 
 ### Changed — the second flagship spine (no new skills)

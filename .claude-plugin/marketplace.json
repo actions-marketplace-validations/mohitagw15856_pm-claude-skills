@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-investing-literacy",
+      "description": "Financial literacy for reading company accounts: a beginner's tutor for an uploaded annual report, an audited-boundary check on every headline figure, a profit-to-cash walk with the arithmetic shown, a same-definitions comparison of two companies, and a vocabulary explainer anchored to the document. Every figure carries a page reference and anything missing is marked not disclosed. Educational — not financial advice; decisions with real money belong with a regulated adviser.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-investing-literacy",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-physio",
       "description": "Physiotherapy and rehab: initial assessment, programme design, progress notes, return-to-activity criteria, discharge and patient education.",
       "version": "1.0.0",

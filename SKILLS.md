@@ -1,4 +1,4 @@
-# 🗂️ All 1169 Skills — full catalog
+# 🗂️ All 1174 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -730,7 +730,7 @@
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 3.3/5 |
 | **Trip Planner** (`trip-planner`) | Turn a destination, some dates, and your vibe into a realistic day-by-day trip itinerary — paced for real humans, with a packing list and a rough… | — |
 
-## 🌍 Industries & Public Sector (698 skills)
+## 🌍 Industries & Public Sector (703 skills)
 
 ### `other` — 22 skills
 
@@ -1385,6 +1385,16 @@
 | **Policy Renewal Review** (`policy-renewal-review`) | Run a pre-renewal review of an insurance programme: scan coverage gaps against current operations, test limit adequacy against inflation and… | — |
 | **Underwriting Narrative** (`underwriting-narrative`) | Write the underwriting file narrative for a risk: the risk story, exposure quantification, loss-history read, mitigating and aggravating factors… | — |
 
+### `pm-investing-literacy` — 5 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **Annual Report Tutor** (`annual-report-tutor`) | Use when asked to walk me through an annual report, teach me to read this 10-K, explain a company's accounts to a beginner, or tutor me on the… | — |
+| **Audited Boundary Check** (`audited-boundary-check`) | Use when asked to check whether a figure is audited, which headline numbers sit outside the audited accounts, what 'adjusted' or 'underlying'… | — |
+| **Company Compare, Same Definitions** (`company-compare-same-definitions`) | Use when asked to compare two annual reports, put two companies from the same sector side by side, or check whether two companies' adjusted… | — |
+| **Investing Vocabulary Explainer** (`investing-vocabulary-explainer`) | Use when asked what a term means in an annual report, to explain EBITDA, goodwill, free cash flow, working capital or diluted EPS, or to define… | — |
+| **Profit to Cash Walk** (`profit-to-cash-walk`) | Use when asked to reconcile operating profit to free cash flow, walk from EBIT to FCF, explain why profit and cash differ in this report, or show… | — |
+
 ### `pm-invisible-illness` — 4 skills
 
 | Skill | What it does | Eval |
@@ -1852,4 +1862,4 @@
 
 ---
 
-_1169 skills across 131 bundles · 28 eval-scored (2%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_1174 skills across 132 bundles · 28 eval-scored (2%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

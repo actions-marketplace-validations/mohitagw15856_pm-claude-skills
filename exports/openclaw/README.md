@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-1169 skills exported. Copy a `SKILL.md` into the tool to use it.
+1174 skills exported. Copy a `SKILL.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -54,6 +54,7 @@
 | Ambiguity Resolver | `pm-strategy` | `ambiguity-resolver/SKILL.md` |
 | Analyst Relations Brief | `pm-pmm` | `analyst-relations-brief/SKILL.md` |
 | Announcement Card | `pm-visuals` | `announcement-card/SKILL.md` |
+| Annual Report Tutor | `pm-investing-literacy` | `annual-report-tutor/SKILL.md` |
 | API Docs Writer | `pm-engineering` | `api-docs-writer/SKILL.md` |
 | API For Yourself | `pm-2027` | `api-for-yourself/SKILL.md` |
 | API Test Plan | `pm-qa` | `api-test-plan/SKILL.md` |
@@ -77,6 +78,7 @@
 | Async Standup Compiler (Live) | `pm-cowork-live` | `async-standup-compiler/SKILL.md` |
 | Async Update Format | `pm-cowork` | `async-update-format/SKILL.md` |
 | Attention Reset | `pm-newgen` | `attention-reset/SKILL.md` |
+| Audited Boundary Check | `pm-investing-literacy` | `audited-boundary-check/SKILL.md` |
 | Auto Repair Estimate Decoder | `pm-decoders` | `auto-repair-estimate-decoder/SKILL.md` |
 | Autopilot Charter | `pm-autopilot` | `autopilot-charter/SKILL.md` |
 | Awkward Message Helper | `pm-comms` | `awkward-message-helper/SKILL.md` |
@@ -196,6 +198,7 @@
 | Community Management Playbook | `pm-social` | `community-management-playbook/SKILL.md` |
 | Community Moderation Policy | `pm-social` | `community-moderation-policy/SKILL.md` |
 | Company Brief | `pm-jobsearch` | `company-brief/SKILL.md` |
+| Company Compare, Same Definitions | `pm-investing-literacy` | `company-compare-same-definitions/SKILL.md` |
 | Company Event Ops | `pm-cowork` | `company-event-ops/SKILL.md` |
 | Comparative Market Analysis | `pm-realestate` | `comparative-market-analysis/SKILL.md` |
 | Competitive Analysis | `pm-essentials` | `competitive-analysis/SKILL.md` |
@@ -561,6 +564,7 @@
 | Inversion Thinking | `pm-thinking` | `inversion-thinking/SKILL.md` |
 | Investing for Beginners | `pm-wealth` | `investing-for-beginners/SKILL.md` |
 | Investing Policy Statement | `pm-money` | `investing-policy-statement/SKILL.md` |
+| Investing Vocabulary Explainer | `pm-investing-literacy` | `investing-vocabulary-explainer/SKILL.md` |
 | Investment-Account Picker | `pm-wealth` | `investment-account-picker/SKILL.md` |
 | Investor Cold Email | `pm-founders` | `investor-cold-email/SKILL.md` |
 | Investor Pitch Deck | `pm-finance` | `investor-pitch-deck/SKILL.md` |
@@ -800,6 +804,7 @@
 | Product-Recall Check | `pm-lifeadmin` | `product-recall-check/SKILL.md` |
 | Professional Brain | `pm-cross` | `professional-brain/SKILL.md` |
 | Professional Translator | `pm-localization` | `professional-translator/SKILL.md` |
+| Profit to Cash Walk | `pm-investing-literacy` | `profit-to-cash-walk/SKILL.md` |
 | Programmatic SEO | `pm-growth` | `programmatic-seo/SKILL.md` |
 | Project Status Report | `pm-operations` | `project-status-report/SKILL.md` |
 | Promotion Packet | `pm-career` | `promotion-packet/SKILL.md` |

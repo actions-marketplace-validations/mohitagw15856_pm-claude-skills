@@ -1,8 +1,8 @@
-# 🧠 PM Skills — 1169 Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
+# 🧠 PM Skills — 1174 Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
 <p align="center">
   <a href="https://mohitagw15856.github.io/pm-claude-skills/">
-    <img src="web/docs-assets/hero.svg" width="100%" alt="PM Skills — 1169 professional skills your AI assistant can read. Plain markdown, works with Claude, ChatGPT, Gemini, Cursor, and Codex. MIT licensed." />
+    <img src="web/docs-assets/hero.svg" width="100%" alt="PM Skills — 1174 professional skills your AI assistant can read. Plain markdown, works with Claude, ChatGPT, Gemini, Cursor, and Codex. MIT licensed." />
   </a>
 </p>
 
@@ -32,7 +32,7 @@
 ## What is PM Skills?
 
 <!-- AEO Answer Capsule — 68 words -->
-PM Skills is an open-source library of 1169 Agent Skills — plain-markdown SKILL.md files that teach an AI assistant to do one professional task to a senior professional's standard, from writing a PRD to decoding a lease or running a blameless postmortem. Each skill bundles the framework, an output template, quality checks, and anti-patterns. It is MIT-licensed and works with Claude, ChatGPT, Gemini, Cursor, and Codex.
+PM Skills is an open-source library of 1174 Agent Skills — plain-markdown SKILL.md files that teach an AI assistant to do one professional task to a senior professional's standard, from writing a PRD to decoding a lease or running a blameless postmortem. Each skill bundles the framework, an output template, quality checks, and anti-patterns. It is MIT-licensed and works with Claude, ChatGPT, Gemini, Cursor, and Codex.
 <!-- End AEO Capsule -->
 
 **Decode a lease before you sign it. Write a PRD your team can execute. Simulate the promotion committee before the real one meets. Check the weather with zero API keys.** Generic AI gives you filler; these give you the structure a senior professional actually uses.
@@ -124,8 +124,8 @@ It's not just a folder of files — the whole library is explorable, runnable, a
 <table>
 <tr>
 <td width="50%" align="center">
-<a href="https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html"><img src="web/docs-assets/demo-galaxy.webp" width="100%" alt="Galaxy 3D — fly through all 1169 skills as a glowing constellation you orbit and click into" /></a>
-<br /><sub><b>🌌 <a href="https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html">Galaxy 3D</a></b> — fly through all 1169 skills as a living constellation. The ones you've run burn brighter.</sub>
+<a href="https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html"><img src="web/docs-assets/demo-galaxy.webp" width="100%" alt="Galaxy 3D — fly through all 1174 skills as a glowing constellation you orbit and click into" /></a>
+<br /><sub><b>🌌 <a href="https://mohitagw15856.github.io/pm-claude-skills/galaxy3d.html">Galaxy 3D</a></b> — fly through all 1174 skills as a living constellation. The ones you've run burn brighter.</sub>
 </td>
 <td width="50%" align="center">
 <a href="https://mohitagw15856.github.io/pm-claude-skills/wrapped.html"><img src="web/docs-assets/demo-holo.webp" width="100%" alt="PM Skills Wrapped — your practice turned into a shareable, Spotify-Wrapped-style story" /></a>
@@ -134,7 +134,7 @@ It's not just a folder of files — the whole library is explorable, runnable, a
 </tr>
 </table>
 
-▶ **[Open the Playground](https://mohitagw15856.github.io/pm-claude-skills/)** to run any of the 1169 skills with your own key — or just [browse them all](SKILLS.md).
+▶ **[Open the Playground](https://mohitagw15856.github.io/pm-claude-skills/)** to run any of the 1174 skills with your own key — or just [browse them all](SKILLS.md).
 
 ## 💬 What can I ask it to do?
 
@@ -147,7 +147,7 @@ Anything below is a real ask that activates a real skill — say it in your own 
 | 🛂 *"prep me for the visa interview"* → [the-visa-interview](skills/the-visa-interview/SKILL.md) | 🔨 *"is this contractor quote fair?"* → [home-contractor-quote-decoder](skills/home-contractor-quote-decoder/SKILL.md) | 🏡 *"should we rent or buy?"* → [rent-vs-buy](skills/rent-vs-buy/SKILL.md) |
 | 📝 *"draft my self-review honestly"* → [performance-review](skills/performance-review/SKILL.md) | 🚀 *"are we ready to launch?"* → [product-launch-checklist](skills/product-launch-checklist/SKILL.md) | 📬 *"my inbox is 4,000 deep"* → [email-triage-system](skills/email-triage-system/SKILL.md) |
 
-…all 1169 asks live in **[the catalog](SKILLS.md)**.
+…all 1174 asks live in **[the catalog](SKILLS.md)**.
 
 ## ⚡ Quick start
 
@@ -163,7 +163,7 @@ No `npm install` needed — `npx pm-claude-skills …` always runs the latest. `
 
 ## 📚 The skills
 
-Every skill follows the same discipline: what it produces, the inputs it needs, a real framework (severity scales, decision rules — not vibes), a concrete output template, quality checks, and anti-patterns. All 1169 pass the [SkillSpec](SKILLSPEC.md) L3 gate and a security audit in CI.
+Every skill follows the same discipline: what it produces, the inputs it needs, a real framework (severity scales, decision rules — not vibes), a concrete output template, quality checks, and anti-patterns. All 1174 pass the [SkillSpec](SKILLSPEC.md) L3 gate and a security audit in CI.
 
 <table align="center">
   <tr align="center">
@@ -223,6 +223,7 @@ Every skill follows the same discipline: what it produces, the inputs it needs, 
 | 🎯 **Focus & executive function** (26) 🆕 | Get unstuck and run your own brain — ADHD-friendly, for everyone | [where-do-i-start](skills/where-do-i-start/SKILL.md) · [task-to-first-step](skills/task-to-first-step/SKILL.md) · [overwhelm-triage](skills/overwhelm-triage/SKILL.md) · [the-one-thing](skills/the-one-thing/SKILL.md) · [build-my-memory-file](skills/build-my-memory-file/SKILL.md) · [weekly-unstuck](skills/weekly-unstuck/SKILL.md) |
 | 📖 **Learning & mastery** (10) 🆕 | Learn anything faster and make it stick | [learn-anything-roadmap](skills/learn-anything-roadmap/SKILL.md) · [feynman-explainer](skills/feynman-explainer/SKILL.md) · [spaced-repetition-setup](skills/spaced-repetition-setup/SKILL.md) · [skill-plateau-breaker](skills/skill-plateau-breaker/SKILL.md) · [deliberate-practice-plan](skills/deliberate-practice-plan/SKILL.md) |
 | 💰 **Wealth-building** (10) 🆕 | Build wealth on purpose — educational, not financial advice | [investing-for-beginners](skills/investing-for-beginners/SKILL.md) · [index-fund-starter](skills/index-fund-starter/SKILL.md) · [ask-for-a-raise](skills/ask-for-a-raise/SKILL.md) · [first-100k-plan](skills/first-100k-plan/SKILL.md) · [financial-independence-roadmap](skills/financial-independence-roadmap/SKILL.md) |
+| 📑 **Investing literacy** (5) 🆕 | Read a company's accounts before you believe its highlights — every figure page-referenced; educational, not financial advice | [annual-report-tutor](skills/annual-report-tutor/SKILL.md) · [audited-boundary-check](skills/audited-boundary-check/SKILL.md) · [profit-to-cash-walk](skills/profit-to-cash-walk/SKILL.md) · [company-compare-same-definitions](skills/company-compare-same-definitions/SKILL.md) · [investing-vocabulary-explainer](skills/investing-vocabulary-explainer/SKILL.md) |
 | 🤝 **Social & relationships** (10) 🆕 | The hard conversations and the human ones | [make-friends-as-an-adult](skills/make-friends-as-an-adult/SKILL.md) · [networking-for-introverts](skills/networking-for-introverts/SKILL.md) · [boundary-setting-scripts](skills/boundary-setting-scripts/SKILL.md) · [give-hard-feedback-kindly](skills/give-hard-feedback-kindly/SKILL.md) · [repair-after-a-fight](skills/repair-after-a-fight/SKILL.md) |
 | 🩺 **Caregiving & aging** (10) 🆕 | Care for aging parents and navigate the system — not medical/legal advice | [medical-appointment-advocate](skills/medical-appointment-advocate/SKILL.md) · [care-team-coordinator](skills/care-team-coordinator/SKILL.md) · [caregiver-burnout-check](skills/caregiver-burnout-check/SKILL.md) · [long-term-care-options](skills/long-term-care-options/SKILL.md) · [end-of-life-wishes-conversation](skills/end-of-life-wishes-conversation/SKILL.md) |
 | 🤖 **AI-native life** (10) 🆕 | Use AI itself well — the meta-skills that make every tool better | [prompt-library-builder](skills/prompt-library-builder/SKILL.md) · [delegate-to-ai](skills/delegate-to-ai/SKILL.md) · [ai-context-primer](skills/ai-context-primer/SKILL.md) · [spot-ai-mistakes](skills/spot-ai-mistakes/SKILL.md) · [get-more-from-ai](skills/get-more-from-ai/SKILL.md) |
@@ -238,7 +239,7 @@ Every skill follows the same discipline: what it produces, the inputs it needs, 
 | <img src="web/docs-assets/logos/pm-design.svg" width="20" alt=""/> [Design & UX](plugins/pm-design/) | <img src="web/docs-assets/logos/pm-legal.svg" width="20" alt=""/> [Legal](plugins/pm-legal/) | <img src="web/docs-assets/logos/pm-finance.svg" width="20" alt=""/> [Finance](plugins/pm-finance/) |
 | <img src="web/docs-assets/logos/pm-founders.svg" width="20" alt=""/> [Founders](plugins/pm-founders/) | <img src="web/docs-assets/logos/pm-security.svg" width="20" alt=""/> [Security](plugins/pm-security/) | <img src="web/docs-assets/logos/pm-gov.svg" width="20" alt=""/> [Government](plugins/pm-gov/) |
 
-…plus HR, sales, operations, research, healthcare, educators, writers, social media, and more — **[the full profession index](SKILLS.md)**, or by bundle in [`plugins/`](plugins/) (130 bundles). Install any bundle: `/plugin install pm-decoders@pm-skills`.
+…plus HR, sales, operations, research, healthcare, educators, writers, social media, and more — **[the full profession index](SKILLS.md)**, or by bundle in [`plugins/`](plugins/) (131 bundles). Install any bundle: `/plugin install pm-decoders@pm-skills`.
 
 ### Meta
 
@@ -384,7 +385,7 @@ README should say what this is, not what it was.
 
 <details>
 <summary><b>Is it actually free?</b></summary>
-Yes — MIT, all 1169 skills, forever. The skills are markdown; there is nothing to gate. Sponsors fund the playground's free model runs, not access.
+Yes — MIT, all 1174 skills, forever. The skills are markdown; there is nothing to gate. Sponsors fund the playground's free model runs, not access.
 </details>
 
 <details>
@@ -431,4 +432,4 @@ MIT — use them, fork them, ship them at work. Skills are judgment, and judgmen
 
 ---
 
-*Built by [Mohit](https://github.com/mohitagw15856) with Claude. 1169 skills · 130 bundles · 35 professions · every commit gated. The long version of this README — every feature, wave, and frontier bet — lives in the **[Showcase](docs/SHOWCASE.md)**.*
+*Built by [Mohit](https://github.com/mohitagw15856) with Claude. 1174 skills · 131 bundles · 35 professions · every commit gated. The long version of this README — every feature, wave, and frontier bet — lives in the **[Showcase](docs/SHOWCASE.md)**.*

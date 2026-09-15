@@ -1048,6 +1048,26 @@
   {
    "skill": "disagreeing-experts",
    "input": "I'm 58, divorcing after 30 years, and everyone gives me one-sided advice. We own a business together (I run it, she owns 40%), the house is paid off, and our daughter works in the business. Give me the lawyer's read, the accountant's read, and the therapist's read — and show me exactly where they'd fight."
+  },
+  {
+   "skill": "annual-report-tutor",
+   "input": "I've uploaded the FY2025 annual report of a mid-sized UK supermarket chain (PDF attached, 184 pages). I've never read one before. Walk me through it one step at a time — start with where the three statements are, and don't move on until I say so."
+  },
+  {
+   "skill": "audited-boundary-check",
+   "input": "Here's the annual report (PDF attached). Page 2 says 'Adjusted EBITDA up 14% to £412m' and 'record free cash flow of £190m', and the CEO review on page 8 quotes 'like-for-like growth of 6.2%'. Which of these numbers did the auditor actually sign off, and what was taken out to get to them?"
+  },
+  {
+   "skill": "profit-to-cash-walk",
+   "input": "Operating profit in the attached 10-K is $298m but cash only went up by $40m and the company says free cash flow was $250m. Walk me from operating profit to free cash flow line by line using the report's own numbers, and show the arithmetic so I can check it."
+  },
+  {
+   "skill": "company-compare-same-definitions",
+   "input": "I've attached the latest annual reports for two European airlines. Both highlight an 'adjusted operating margin' of about 12%. Compare them on the same five ratios using identical definitions from the audited statements, and tell me where their definitions differ."
+  },
+  {
+   "skill": "investing-vocabulary-explainer",
+   "input": "In the attached annual report, what do 'goodwill', 'deferred revenue', and 'diluted EPS' mean, and is the share price cheap given the EPS on page 61?"
   }
  ]
 }

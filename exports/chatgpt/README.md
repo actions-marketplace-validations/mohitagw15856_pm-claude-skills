@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-1169 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
+1174 skills exported. Copy a `SYSTEM_PROMPT.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -54,6 +54,7 @@
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/SYSTEM_PROMPT.md` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/SYSTEM_PROMPT.md` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/SYSTEM_PROMPT.md` |
+| Annual Report Tutor | `pm-investing-literacy` | `pm-investing-literacy/annual-report-tutor/SYSTEM_PROMPT.md` |
 | API Docs Writer | `pm-engineering` | `pm-engineering/api-docs-writer/SYSTEM_PROMPT.md` |
 | API For Yourself | `pm-2027` | `pm-2027/api-for-yourself/SYSTEM_PROMPT.md` |
 | API Test Plan | `pm-qa` | `pm-qa/api-test-plan/SYSTEM_PROMPT.md` |
@@ -77,6 +78,7 @@
 | Async Standup Compiler (Live) | `pm-cowork-live` | `pm-cowork-live/async-standup-compiler/SYSTEM_PROMPT.md` |
 | Async Update Format | `pm-cowork` | `pm-cowork/async-update-format/SYSTEM_PROMPT.md` |
 | Attention Reset | `pm-newgen` | `pm-newgen/attention-reset/SYSTEM_PROMPT.md` |
+| Audited Boundary Check | `pm-investing-literacy` | `pm-investing-literacy/audited-boundary-check/SYSTEM_PROMPT.md` |
 | Auto Repair Estimate Decoder | `pm-decoders` | `pm-decoders/auto-repair-estimate-decoder/SYSTEM_PROMPT.md` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/SYSTEM_PROMPT.md` |
 | Awkward Message Helper | `pm-comms` | `pm-comms/awkward-message-helper/SYSTEM_PROMPT.md` |
@@ -196,6 +198,7 @@
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/SYSTEM_PROMPT.md` |
 | Community Moderation Policy | `pm-social` | `pm-social/community-moderation-policy/SYSTEM_PROMPT.md` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/SYSTEM_PROMPT.md` |
+| Company Compare, Same Definitions | `pm-investing-literacy` | `pm-investing-literacy/company-compare-same-definitions/SYSTEM_PROMPT.md` |
 | Company Event Ops | `pm-cowork` | `pm-cowork/company-event-ops/SYSTEM_PROMPT.md` |
 | Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/SYSTEM_PROMPT.md` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/SYSTEM_PROMPT.md` |
@@ -561,6 +564,7 @@
 | Inversion Thinking | `pm-thinking` | `pm-thinking/inversion-thinking/SYSTEM_PROMPT.md` |
 | Investing for Beginners | `pm-wealth` | `pm-wealth/investing-for-beginners/SYSTEM_PROMPT.md` |
 | Investing Policy Statement | `pm-money` | `pm-money/investing-policy-statement/SYSTEM_PROMPT.md` |
+| Investing Vocabulary Explainer | `pm-investing-literacy` | `pm-investing-literacy/investing-vocabulary-explainer/SYSTEM_PROMPT.md` |
 | Investment-Account Picker | `pm-wealth` | `pm-wealth/investment-account-picker/SYSTEM_PROMPT.md` |
 | Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/SYSTEM_PROMPT.md` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/SYSTEM_PROMPT.md` |
@@ -800,6 +804,7 @@
 | Product-Recall Check | `pm-lifeadmin` | `pm-lifeadmin/product-recall-check/SYSTEM_PROMPT.md` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/SYSTEM_PROMPT.md` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/SYSTEM_PROMPT.md` |
+| Profit to Cash Walk | `pm-investing-literacy` | `pm-investing-literacy/profit-to-cash-walk/SYSTEM_PROMPT.md` |
 | Programmatic SEO | `pm-growth` | `pm-growth/programmatic-seo/SYSTEM_PROMPT.md` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/SYSTEM_PROMPT.md` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/SYSTEM_PROMPT.md` |

@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-1169 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
+1174 skills exported. Copy a `GEM_INSTRUCTIONS.md` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -54,6 +54,7 @@
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/GEM_INSTRUCTIONS.md` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/GEM_INSTRUCTIONS.md` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/GEM_INSTRUCTIONS.md` |
+| Annual Report Tutor | `pm-investing-literacy` | `pm-investing-literacy/annual-report-tutor/GEM_INSTRUCTIONS.md` |
 | API Docs Writer | `pm-engineering` | `pm-engineering/api-docs-writer/GEM_INSTRUCTIONS.md` |
 | API For Yourself | `pm-2027` | `pm-2027/api-for-yourself/GEM_INSTRUCTIONS.md` |
 | API Test Plan | `pm-qa` | `pm-qa/api-test-plan/GEM_INSTRUCTIONS.md` |
@@ -77,6 +78,7 @@
 | Async Standup Compiler (Live) | `pm-cowork-live` | `pm-cowork-live/async-standup-compiler/GEM_INSTRUCTIONS.md` |
 | Async Update Format | `pm-cowork` | `pm-cowork/async-update-format/GEM_INSTRUCTIONS.md` |
 | Attention Reset | `pm-newgen` | `pm-newgen/attention-reset/GEM_INSTRUCTIONS.md` |
+| Audited Boundary Check | `pm-investing-literacy` | `pm-investing-literacy/audited-boundary-check/GEM_INSTRUCTIONS.md` |
 | Auto Repair Estimate Decoder | `pm-decoders` | `pm-decoders/auto-repair-estimate-decoder/GEM_INSTRUCTIONS.md` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/GEM_INSTRUCTIONS.md` |
 | Awkward Message Helper | `pm-comms` | `pm-comms/awkward-message-helper/GEM_INSTRUCTIONS.md` |
@@ -196,6 +198,7 @@
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/GEM_INSTRUCTIONS.md` |
 | Community Moderation Policy | `pm-social` | `pm-social/community-moderation-policy/GEM_INSTRUCTIONS.md` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/GEM_INSTRUCTIONS.md` |
+| Company Compare, Same Definitions | `pm-investing-literacy` | `pm-investing-literacy/company-compare-same-definitions/GEM_INSTRUCTIONS.md` |
 | Company Event Ops | `pm-cowork` | `pm-cowork/company-event-ops/GEM_INSTRUCTIONS.md` |
 | Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/GEM_INSTRUCTIONS.md` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/GEM_INSTRUCTIONS.md` |
@@ -561,6 +564,7 @@
 | Inversion Thinking | `pm-thinking` | `pm-thinking/inversion-thinking/GEM_INSTRUCTIONS.md` |
 | Investing for Beginners | `pm-wealth` | `pm-wealth/investing-for-beginners/GEM_INSTRUCTIONS.md` |
 | Investing Policy Statement | `pm-money` | `pm-money/investing-policy-statement/GEM_INSTRUCTIONS.md` |
+| Investing Vocabulary Explainer | `pm-investing-literacy` | `pm-investing-literacy/investing-vocabulary-explainer/GEM_INSTRUCTIONS.md` |
 | Investment-Account Picker | `pm-wealth` | `pm-wealth/investment-account-picker/GEM_INSTRUCTIONS.md` |
 | Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/GEM_INSTRUCTIONS.md` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/GEM_INSTRUCTIONS.md` |
@@ -800,6 +804,7 @@
 | Product-Recall Check | `pm-lifeadmin` | `pm-lifeadmin/product-recall-check/GEM_INSTRUCTIONS.md` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/GEM_INSTRUCTIONS.md` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/GEM_INSTRUCTIONS.md` |
+| Profit to Cash Walk | `pm-investing-literacy` | `pm-investing-literacy/profit-to-cash-walk/GEM_INSTRUCTIONS.md` |
 | Programmatic SEO | `pm-growth` | `pm-growth/programmatic-seo/GEM_INSTRUCTIONS.md` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/GEM_INSTRUCTIONS.md` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/GEM_INSTRUCTIONS.md` |

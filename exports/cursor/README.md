@@ -3,7 +3,7 @@
 > Auto-generated from `skills/*/SKILL.md` by `scripts/build-exports.mjs`.
 > **Do not edit these files by hand** — edit the source skill and regenerate.
 
-1169 skills exported. Copy a `.mdc rule` into the tool to use it.
+1174 skills exported. Copy a `.mdc rule` into the tool to use it.
 
 | Skill | Bundle | Path |
 |---|---|---|
@@ -54,6 +54,7 @@
 | Ambiguity Resolver | `pm-strategy` | `pm-strategy/ambiguity-resolver/ambiguity-resolver.mdc` |
 | Analyst Relations Brief | `pm-pmm` | `pm-pmm/analyst-relations-brief/analyst-relations-brief.mdc` |
 | Announcement Card | `pm-visuals` | `pm-visuals/announcement-card/announcement-card.mdc` |
+| Annual Report Tutor | `pm-investing-literacy` | `pm-investing-literacy/annual-report-tutor/annual-report-tutor.mdc` |
 | API Docs Writer | `pm-engineering` | `pm-engineering/api-docs-writer/api-docs-writer.mdc` |
 | API For Yourself | `pm-2027` | `pm-2027/api-for-yourself/api-for-yourself.mdc` |
 | API Test Plan | `pm-qa` | `pm-qa/api-test-plan/api-test-plan.mdc` |
@@ -77,6 +78,7 @@
 | Async Standup Compiler (Live) | `pm-cowork-live` | `pm-cowork-live/async-standup-compiler/async-standup-compiler.mdc` |
 | Async Update Format | `pm-cowork` | `pm-cowork/async-update-format/async-update-format.mdc` |
 | Attention Reset | `pm-newgen` | `pm-newgen/attention-reset/attention-reset.mdc` |
+| Audited Boundary Check | `pm-investing-literacy` | `pm-investing-literacy/audited-boundary-check/audited-boundary-check.mdc` |
 | Auto Repair Estimate Decoder | `pm-decoders` | `pm-decoders/auto-repair-estimate-decoder/auto-repair-estimate-decoder.mdc` |
 | Autopilot Charter | `pm-autopilot` | `pm-autopilot/autopilot-charter/autopilot-charter.mdc` |
 | Awkward Message Helper | `pm-comms` | `pm-comms/awkward-message-helper/awkward-message-helper.mdc` |
@@ -196,6 +198,7 @@
 | Community Management Playbook | `pm-social` | `pm-social/community-management-playbook/community-management-playbook.mdc` |
 | Community Moderation Policy | `pm-social` | `pm-social/community-moderation-policy/community-moderation-policy.mdc` |
 | Company Brief | `pm-jobsearch` | `pm-jobsearch/company-brief/company-brief.mdc` |
+| Company Compare, Same Definitions | `pm-investing-literacy` | `pm-investing-literacy/company-compare-same-definitions/company-compare-same-definitions.mdc` |
 | Company Event Ops | `pm-cowork` | `pm-cowork/company-event-ops/company-event-ops.mdc` |
 | Comparative Market Analysis | `pm-realestate` | `pm-realestate/comparative-market-analysis/comparative-market-analysis.mdc` |
 | Competitive Analysis | `pm-essentials` | `pm-essentials/competitive-analysis/competitive-analysis.mdc` |
@@ -561,6 +564,7 @@
 | Inversion Thinking | `pm-thinking` | `pm-thinking/inversion-thinking/inversion-thinking.mdc` |
 | Investing for Beginners | `pm-wealth` | `pm-wealth/investing-for-beginners/investing-for-beginners.mdc` |
 | Investing Policy Statement | `pm-money` | `pm-money/investing-policy-statement/investing-policy-statement.mdc` |
+| Investing Vocabulary Explainer | `pm-investing-literacy` | `pm-investing-literacy/investing-vocabulary-explainer/investing-vocabulary-explainer.mdc` |
 | Investment-Account Picker | `pm-wealth` | `pm-wealth/investment-account-picker/investment-account-picker.mdc` |
 | Investor Cold Email | `pm-founders` | `pm-founders/investor-cold-email/investor-cold-email.mdc` |
 | Investor Pitch Deck | `pm-finance` | `pm-finance/investor-pitch-deck/investor-pitch-deck.mdc` |
@@ -800,6 +804,7 @@
 | Product-Recall Check | `pm-lifeadmin` | `pm-lifeadmin/product-recall-check/product-recall-check.mdc` |
 | Professional Brain | `pm-cross` | `pm-cross/professional-brain/professional-brain.mdc` |
 | Professional Translator | `pm-localization` | `pm-localization/professional-translator/professional-translator.mdc` |
+| Profit to Cash Walk | `pm-investing-literacy` | `pm-investing-literacy/profit-to-cash-walk/profit-to-cash-walk.mdc` |
 | Programmatic SEO | `pm-growth` | `pm-growth/programmatic-seo/programmatic-seo.mdc` |
 | Project Status Report | `pm-operations` | `pm-operations/project-status-report/project-status-report.mdc` |
 | Promotion Packet | `pm-career` | `pm-career/promotion-packet/promotion-packet.mdc` |

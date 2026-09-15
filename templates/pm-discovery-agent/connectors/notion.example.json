@@ -59,7 +59,7 @@
     "1. Create a Notion integration at https://www.notion.so/my-integrations",
     "2. Click '+ New integration', name it 'PM Discovery Agent', leave defaults",
     "3. After creation, copy the Internal Integration Token (starts with 'secret_')",
-    "4. Set the environment variable: export NOTION_INTEGRATION_TOKEN='secret_xxxxx...'",
+    "4. Set the environment variable: export NOTION_INTEGRATION_TOKEN=<your integration token>",
     "5. Open your interview notes database in Notion",
     "6. Click '...' menu in top right > 'Add connections' > select your new integration",
     "7. Find your database ID: it's the long string in the URL when viewing the database (after the workspace name and before the '?'). Example: notion.so/workspace/abc123def456 — abc123def456 is the ID",

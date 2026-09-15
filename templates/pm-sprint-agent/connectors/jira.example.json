@@ -59,7 +59,7 @@
   
   "_setup_instructions": [
     "1. Generate a Jira API token at https://id.atlassian.com/manage-profile/security/api-tokens",
-    "2. Set environment variables: export JIRA_EMAIL='you@company.com' && export JIRA_API_TOKEN='ATATT3xFfGF0...'",
+    "2. Set environment variables: export JIRA_EMAIL=<your email> && export JIRA_API_TOKEN=<your API token>",
     "3. Find your project key (visible in the URL when viewing a project, e.g., 'PROJ' from 'jira.com/browse/PROJ-123')",
     "4. Find your board ID: navigate to your board, look at the URL ('boards/123' = board ID 123)",
     "5. Update instance_url, project_key, and board_id in this file",

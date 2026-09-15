@@ -32,7 +32,7 @@ const PLAIN = `Here is an update on the quarter. The team worked hard this quart
 const chunk = (t) => t.match(/\S+\s*/g) || [t];
 
 const initScript = ({ withChunks, plainChunks }) => {
-  try { localStorage.setItem('anthropic_api_key', 'sk-ant-demo-key-not-real'); } catch (e) {}
+  try { localStorage.setItem('anthropic_api_key', 'demo-key-not-real'); } catch (e) {}
   const realFetch = window.fetch.bind(window);
   window.fetch = (url, opts) => {
     const u = typeof url === 'string' ? url : (url && url.url) || '';

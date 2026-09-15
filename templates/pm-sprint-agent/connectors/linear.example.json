@@ -56,7 +56,7 @@
   
   "_setup_instructions": [
     "1. Generate a Linear API key at https://linear.app/settings/account/security (workspace admin scope is sufficient)",
-    "2. Set the LINEAR_API_KEY environment variable: export LINEAR_API_KEY='lin_api_xxxxx...'",
+    "2. Set the LINEAR_API_KEY environment variable: export LINEAR_API_KEY=<your API key>",
     "3. Find your team ID by running: curl -H 'Authorization: $LINEAR_API_KEY' https://api.linear.app/graphql -d '{\"query\": \"{ teams { nodes { id name } } }\"}'",
     "4. Update workspace_url and team_id in this file",
     "5. Save this file as 'linear.json' (without the .example)",

@@ -15,7 +15,7 @@
 import { readdirSync, existsSync, mkdirSync, rmSync, cpSync, symlinkSync, copyFileSync, statSync, readFileSync } from 'node:fs';
 import { join, dirname, basename, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { homedir } from 'node:os';
 import { createRequire } from 'node:module';
 
@@ -351,7 +351,7 @@ function changelog(opts) {
   }
   if (history == null) {
     try {
-      const out = execSync(`git log --pretty=format:"%as %h %s" -- "skills/${name}/"`, { cwd: PKG_ROOT, encoding: 'utf8' }).trim();
+      const out = execFileSync('git', ['log', '--pretty=format:%as %h %s', '--', `skills/${name}/`], { cwd: PKG_ROOT, encoding: 'utf8' }).trim();
       history = out ? out.split('\n').map((l) => { const m = l.match(/^(\S+)\s+(\S+)\s+(.*)$/); return m ? { date: m[1], sha: m[2], subject: m[3] } : null; }).filter(Boolean) : [];
     } catch { history = null; }
   }

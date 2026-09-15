@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const stage = join(here, '.scorm-stage');
@@ -45,7 +45,7 @@ writeFileSync(join(stage, 'imsmanifest.xml'), `<?xml version="1.0" encoding="UTF
   ${scos.map((s, i) => `<resource identifier="r${i + 1}" type="webcontent" adlcp:scormtype="sco" href="${s.f}"><file href="${s.f}"/></resource>`).join('\n  ')}
   </resources>
 </manifest>`);
-try { execSync(`cd ${JSON.stringify(stage)} && zip -q -r ../pm-skills-course.zip .`); }
-catch { execSync(`python3 -c "import shutil; shutil.make_archive('${join(here, 'pm-skills-course')}', 'zip', '${stage}')"`); }
+try { execFileSync('zip', ['-q', '-r', join(here, 'pm-skills-course.zip'), '.'], { cwd: stage }); }
+catch { execFileSync('python3', ['-c', 'import shutil, sys; shutil.make_archive(sys.argv[1], "zip", sys.argv[2])', join(here, 'pm-skills-course'), stage]); }
 rmSync(stage, { recursive: true, force: true });
 console.log('Wrote docs/syllabus/pm-skills-course.zip (SCORM 1.2, 6 SCOs)');

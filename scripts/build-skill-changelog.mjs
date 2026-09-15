@@ -4,7 +4,7 @@
 // Shape: { generatedAt, skills: { <name>: [{ date, subject, sha }] } } (newest first,
 // capped per skill). Pure function of git history → a build artifact (gitignored),
 // regenerated at deploy alongside the sitemap. No dependencies, no network.
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { writeFileSync, readdirSync, existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,7 +23,7 @@ const out = { generatedAt: new Date().toISOString().slice(0, 10), skills: {} };
 // Shallow CI checkouts have truncated history — reuse the committed artifact so the
 // panel doesn't go blank (mirrors web/build-skills.mjs's handling of `updated`).
 let shallow = false;
-try { shallow = execSync('git rev-parse --is-shallow-repository', { cwd: root, encoding: 'utf8' }).trim() === 'true'; } catch { /* not a git repo */ }
+try { shallow = execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: root, encoding: 'utf8' }).trim() === 'true'; } catch { /* not a git repo */ }
 if (shallow && existsSync(outFile)) {
   try { out.skills = JSON.parse(readFileSync(outFile, 'utf8')).skills || {}; } catch { /* start fresh */ }
   writeFileSync(outFile, JSON.stringify(out, null, 2) + '\n');
@@ -34,8 +34,8 @@ if (shallow && existsSync(outFile)) {
   const SEP = '';
   let entries = [];
   try {
-    const log = execSync(
-      `git log --pretty=format:"%h${SEP}%as${SEP}%s" --name-only -- "skills/*/SKILL.md"`,
+    const log = execFileSync(
+      'git', ['log', `--pretty=format:%h${SEP}%as${SEP}%s`, '--name-only', '--', 'skills/*/SKILL.md'],
       { cwd: root, encoding: 'utf8', maxBuffer: 128 * 1024 * 1024 },
     );
     let cur = null;

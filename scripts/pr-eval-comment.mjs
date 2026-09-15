@@ -5,7 +5,7 @@
 // just confirms structure and flags any changed skill that still needs an eval case.
 // Prints the comment to stdout. Env: BASE_REF (default origin/main), SKILLCHECK ("pass"/"fail").
 import { readFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,7 +15,10 @@ const skillcheck = process.env.SKILLCHECK || 'unknown';
 
 function changedSkills() {
   try {
-    const out = execSync(`git diff --name-only ${base}...HEAD -- skills/ 2>/dev/null || git diff --name-only ${base} -- skills/`, { cwd: root, encoding: 'utf8' });
+    if (!/^[\w./-]+$/.test(base)) return [];
+    const diff = (range) => execFileSync('git', ['diff', '--name-only', range, '--', 'skills/'], { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    let out;
+    try { out = diff(`${base}...HEAD`); } catch { out = diff(base); }
     return [...new Set(out.split('\n').map((l) => (l.match(/^skills\/([^/]+)\//) || [])[1]).filter(Boolean))];
   } catch { return []; }
 }

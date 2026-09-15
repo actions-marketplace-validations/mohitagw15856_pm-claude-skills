@@ -4,7 +4,7 @@
 import { writeFileSync, existsSync, unlinkSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { homedir, platform } from 'node:os';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const PREFIX = 'com.pm-skills.';
 
@@ -35,15 +35,15 @@ export function install(name, argvArray, { hour = 5, minute = 30, cron = null } 
 </dict></plist>`;
     const p = join(homedir(), 'Library', 'LaunchAgents', label + '.plist');
     writeFileSync(p, plist);
-    try { execSync(`launchctl unload ${JSON.stringify(p)} 2>/dev/null`); } catch { /* not loaded */ }
-    execSync(`launchctl load ${JSON.stringify(p)}`);
+    try { execFileSync('launchctl', ['unload', p], { stdio: 'ignore' }); } catch { /* not loaded */ }
+    execFileSync('launchctl', ['load', p]);
     return { kind: 'launchd', path: p, when: `daily ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}` };
   }
   // Linux: append a labeled crontab line.
   const line = `${cron || `${minute} ${hour} * * *`} cd ${sh(process.cwd())} && ${argvArray.map(sh).join(' ')} >> .pm-skills/${name}.log 2>&1 # ${PREFIX}${name}`;
-  const current = (() => { try { return execSync('crontab -l').toString(); } catch { return ''; } })();
+  const current = (() => { try { return execFileSync('crontab', ['-l']).toString(); } catch { return ''; } })();
   const cleaned = current.split('\n').filter((l) => !l.includes(`# ${PREFIX}${name}`)).join('\n').trim();
-  execSync('crontab -', { input: cleaned + '\n' + line + '\n' });
+  execFileSync('crontab', ['-'], { input: cleaned + '\n' + line + '\n' });
   return { kind: 'cron', path: 'crontab', when: cron || `daily ${hour}:${minute}` };
 }
 
@@ -51,14 +51,14 @@ export function uninstall(name) {
   if (platform() === 'darwin') {
     const p = join(homedir(), 'Library', 'LaunchAgents', PREFIX + name + '.plist');
     if (!existsSync(p)) return false;
-    try { execSync(`launchctl unload ${JSON.stringify(p)}`); } catch { /* fine */ }
+    try { execFileSync('launchctl', ['unload', p], { stdio: 'ignore' }); } catch { /* fine */ }
     unlinkSync(p);
     return true;
   }
-  const current = (() => { try { return execSync('crontab -l').toString(); } catch { return ''; } })();
+  const current = (() => { try { return execFileSync('crontab', ['-l']).toString(); } catch { return ''; } })();
   const cleaned = current.split('\n').filter((l) => !l.includes(`# ${PREFIX}${name}`)).join('\n');
   if (cleaned === current) return false;
-  execSync('crontab -', { input: cleaned });
+  execFileSync('crontab', ['-'], { input: cleaned });
   return true;
 }
 
@@ -68,6 +68,6 @@ export function list() {
     if (!existsSync(dir)) return [];
     return readdirSync(dir).filter((f) => f.startsWith(PREFIX)).map((f) => f.slice(PREFIX.length).replace(/\.plist$/, ''));
   }
-  try { return execSync('crontab -l').toString().split('\n').filter((l) => l.includes('# ' + PREFIX)).map((l) => l.split('# ' + PREFIX)[1]); }
+  try { return execFileSync('crontab', ['-l']).toString().split('\n').filter((l) => l.includes('# ' + PREFIX)).map((l) => l.split('# ' + PREFIX)[1]); }
   catch { return []; }
 }

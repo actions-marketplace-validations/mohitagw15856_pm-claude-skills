@@ -26,7 +26,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { complete, parseSkill } from '../bin/lib/anthropic.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -158,7 +158,10 @@ async function scoreTask({ c, body, description, model, hash }) {
 // Skills whose SKILL.md changed vs the base git ref (for --changed / CI on a PR).
 function changedSkills() {
   try {
-    const out = execSync(`git diff --name-only ${baseRef}...HEAD -- skills/ 2>/dev/null || git diff --name-only ${baseRef} -- skills/`, { cwd: root, encoding: 'utf8' });
+    if (!/^[\w./-]+$/.test(baseRef)) return new Set();
+    const diff = (range) => execFileSync('git', ['diff', '--name-only', range, '--', 'skills/'], { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    let out;
+    try { out = diff(`${baseRef}...HEAD`); } catch { out = diff(baseRef); }
     return new Set(out.split('\n').map((l) => (l.match(/^skills\/([^/]+)\//) || [])[1]).filter(Boolean));
   } catch { return new Set(); }
 }

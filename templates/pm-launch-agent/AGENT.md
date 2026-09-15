@@ -54,7 +54,7 @@ You operate in this order:
 
 7. **Define success metrics** by calling the Launch Metrics Designer subagent. Provide it: feature description, launch tier, target audience. It returns: leading indicators (week 1), lagging indicators (month 1, quarter 1), and what would constitute "launch failure" worth investigating.
 
-8. **Generate the launch checklist** using the `launch-checklist` skill. Provide it: launch tier, channels included, launch date. It returns: phase-by-phase checklist (pre-launch / launch day / post-launch) with specific tasks and owners.
+8. **Generate the launch checklist** using the `product-launch-checklist` skill. Provide it: launch tier, channels included, launch date. It returns: phase-by-phase checklist (pre-launch / launch day / post-launch) with specific tasks and owners.
 
 9. **Compile everything** into a single launch plan document with these sections:
    - Launch overview (positioning, target, date)
@@ -86,7 +86,7 @@ You operate in this order:
 | content-calendar (skill) | Build the scheduled content calendar |
 | email-campaign (skill) | Reference for email format |
 | media-pitch (skill) | Generate journalist pitch (major/flagship only) |
-| launch-checklist (skill) | Generate phase-by-phase task checklist |
+| product-launch-checklist (skill) | Generate phase-by-phase task checklist |
 | channel-drafter (subagent) | Adapt content per channel |
 | launch-metrics-designer (subagent) | Design success metrics |
 | notion-connector (optional) | Post launch plan to shared workspace |

@@ -48,7 +48,7 @@ templates/pm-launch-agent/
 │   ├── content-calendar/SKILL.md      ← (symlink)
 │   ├── media-pitch/SKILL.md           ← (symlink)
 │   ├── email-campaign/SKILL.md        ← (symlink)
-│   └── launch-checklist/SKILL.md      ← (symlink)
+│   └── product-launch-checklist/SKILL.md      ← (symlink)
 ├── subagents/
 │   ├── channel-drafter.md             ← per-channel content generation
 │   └── launch-metrics-designer.md     ← success metrics design
@@ -113,7 +113,7 @@ The agent will:
 8. Build content calendar using `content-calendar` skill
 9. Draft media pitch using `media-pitch` skill (only for major launches)
 10. Define success metrics (via Launch Metrics Designer)
-11. Compile launch checklist using `launch-checklist` skill
+11. Compile launch checklist using `product-launch-checklist` skill
 12. Output everything to `output/launch-[feature-name]-plan.md`
 
 ### Configuration options

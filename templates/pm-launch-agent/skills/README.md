@@ -8,7 +8,7 @@ The PM Launch Agent uses these skills from the main pm-claude-skills library:
 | [`content-calendar`](../../../skills/content-calendar/) | Builds the scheduled content calendar across channels | Step 5 |
 | [`media-pitch`](../../../skills/media-pitch/) | Drafts the media/journalist pitch (major and flagship launches only) | Step 6 |
 | [`email-campaign`](../../../skills/email-campaign/) | Reference for email format used by the Channel Drafter subagent | (reference) |
-| [`launch-checklist`](../../../skills/launch-checklist/) | Generates the phase-by-phase launch task checklist | Step 8 |
+| [`product-launch-checklist`](../../../skills/product-launch-checklist/) | Generates the phase-by-phase launch task checklist | Step 8 |
 
 ## How skills are referenced
 

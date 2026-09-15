@@ -9,6 +9,13 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [78.0.1] — security: no eval, no shell strings — 2026-09-15
+
+### Fixed
+- `tornado-sensitivity` helper script evaluates formulas by walking the AST instead of `eval()`; only numbers, driver names, the six safe functions and arithmetic are accepted.
+- `bin/cli.mjs`, `bin/lib/scheduler.mjs`, `scripts/build-skill-changelog.mjs`, `scripts/pr-eval-comment.mjs`, `evals/run-evals.mjs` and `docs/syllabus/build-scorm.mjs` use `execFileSync` with argument arrays instead of interpolated shell strings; git refs taken from the environment are validated first.
+- The library now passes the HOL AI Plugin Scanner at `fail_on_severity: high` (score 86/100, 0 high findings).
+
 ## [78.0.0] — six adopted professions, fifteen creative formats, and investing literacy — 2026-09-15
 
 **1174 skills · 131 bundles** (from 1117 · 124 at v77).

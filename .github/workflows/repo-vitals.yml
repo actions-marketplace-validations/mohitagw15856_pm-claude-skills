@@ -51,7 +51,7 @@ jobs:
             let h=[]; try{h=JSON.parse(fs.readFileSync('history.json','utf8'))}catch(_){}
             const today=new Date().toISOString().slice(0,10);
             h=h.filter(x=>x.d!==today);
-            h.push({d:today, runs:${RUNS}, stars:${STARS}, npmWeek:${NPMW}, npmToolsWeek:${NPMTOOLS}, npmSpecWeek:${NPMSPEC}, pypiMonth:${PYPI}, skillPings:${SKILLPINGS}});
+            h.push({d:today, runs:${RUNS:-null}, stars:${STARS:-null}, npmWeek:${NPMW:-null}, npmToolsWeek:${NPMTOOLS:-null}, npmSpecWeek:${NPMSPEC:-null}, pypiMonth:${PYPI:-null}, skillPings:${SKILLPINGS:-null}});
             fs.writeFileSync('history.json', JSON.stringify(h,null,1)+'\n');
             console.log('history:', h.length, 'days');
           "

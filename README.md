@@ -1,7 +1,16 @@
 # 🧠 PM Skills: Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
-> **Your landlord kept your deposit. You got laid off on a Tuesday. Your boss wants the PRD by Friday.**
-> Generic AI is a very confident intern. **PM Skills** is the senior colleague's notes: 1285 of them, one markdown file each. *(PM stands for Professional. Yes, we get asked.)*
+> **One request to your AI, one finished deliverable back: the PRD, the stakeholder update and the decision call, at a senior product manager's standard.**
+
+Try it right now. Install below, then paste this into your assistant:
+
+```text
+Here are my discovery notes from six customer calls: [paste your notes].
+Turn them into a one-page PRD, a risk register with owners, and a
+stakeholder update I can send to leadership today.
+```
+
+Your assistant loads [user-interview-synthesis](skills/user-interview-synthesis/SKILL.md), [prd-template](skills/prd-template/SKILL.md) and [stakeholder-update](skills/stakeholder-update/SKILL.md) and returns the three documents, not advice about writing them. Not a PM? The same library covers engineers, job seekers, students, founders and 中文用户, below.
 
 <p align="center">
   <a href="https://mohitagw15856.github.io/pm-claude-skills/">
@@ -46,6 +55,9 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="License"></a>
 </p>
 
+> **Your landlord kept your deposit. You got laid off on a Tuesday. Your boss wants the PRD by Friday.**
+> Generic AI is a very confident intern. **PM Skills** is the senior colleague's notes: 1285 of them, one markdown file each. *(PM stands for Professional. Yes, we get asked.)*
+
 <!-- AEO Answer Capsule — 68 words -->
 PM Skills is an open-source library of 1285 Agent Skills — plain-markdown SKILL.md files that teach an AI assistant to do one professional task to a senior professional's standard, from writing a PRD to decoding a lease or running a blameless postmortem. Each skill bundles the framework, an output template, quality checks, and anti-patterns. It is MIT-licensed and works with Claude, ChatGPT, Gemini, Cursor, and Codex.
 <!-- End AEO Capsule -->
@@ -72,6 +84,10 @@ Then just say what you need: *"Decode this job ad and tell me where I am weak."*
 
 More to see: the **[Showcase gallery](docs/SHOWCASE.md)** has the Playground, the tech tree, Galaxy 3D and Skill City.
 
+## 🧭 How it works
+
+A skill is one plain-markdown SKILL.md file: a description that tells your assistant when to load it, plus the working framework, output template and quality checks it follows. The installer (`npx pm-claude-skills add`) copies the skills you choose into the config folder of the tool you use, so they load only when a request matches. The [MCP server](mcp-remote/) serves skills on demand to any MCP client instead, and the same package exposes a read-only [REST API](mcp-remote/#rest-api-for-n8n-lovable-make-any-http-tool) for n8n, Make and other automations. No runtime, no account, nothing resident: uninstalling deletes text files.
+
 ## 🧑‍🤝‍🧑 Pick your path
 
 <table><tr><td width="72">
@@ -93,20 +109,29 @@ More to see: the **[Showcase gallery](docs/SHOWCASE.md)** has the Playground, th
 
 <p align="center"><sub>None of these you? <a href="docs/start/README.md">docs/start</a> has all six paths, a map of every bundle by what you want to do, a four-question quiz and a five-level quest log. Mid-something big? <a href="PACKS.md">Skill Packs</a> start from your moment: a new baby, a layoff, a move, a loss.</sub></p>
 
-## ⭐ Featured bundles
+## 🗺 What you can do
 
-| Bundle | What it does | Try saying |
-|---|---|---|
-| [**pm-essentials**](plugins/pm-essentials/) | The product toolkit: PRDs, updates, meeting notes | *"Write the PRD for this feature brief."* |
-| [**pm-decoders**](plugins/pm-decoders/) | Read the document before you sign it, with the money maths | *"Decode this lease before I sign tomorrow."* |
-| [**pm-thinking**](plugins/pm-thinking/) | For when the model gives you the average answer | *"Red-team my launch plan."* |
-| [**pm-focus**](plugins/pm-focus/) | Get unstuck; ADHD-friendly, useful for every brain | *"I don't know where to start today."* |
-| [**pm-jobsearch**](plugins/pm-jobsearch/) | Applying, outreach and interviews, end to end | *"Decode this job ad and tell me where I am weak."* |
-| [**pm-money**](plugins/pm-money/) | Educational money maths, assumptions labelled | *"Rent or buy, with my real numbers?"* |
-| [**pm-china-work**](plugins/pm-china-work/) | 周报、述职、复盘，中国职场的写法 | *"帮我把这些笔记整理成周报。"* |
-| [**pm-oss-launch**](plugins/pm-oss-launch/) | Ship a side project strangers trust | *"Make my app self-hostable."* |
+The product-management core first, then the bundles everyone borrows. Each row is a real bundle in [`plugins/`](plugins/).
 
-Install any of them: `/plugin install pm-decoders@pm-claude-skills`, or `npx pm-claude-skills add --bundle pm-decoders`. All 152 bundles: [`plugins/`](plugins/) · every skill: **[SKILLS.md](SKILLS.md)** · chain them: [WORKFLOWS.md](WORKFLOWS.md)
+<!-- WHAT-YOU-CAN-DO:START -->
+| Your job this week | Bundle | What you get | What you bring |
+|---|---|---|---|
+| Turn research into decisions | [pm-discovery](plugins/pm-discovery/) | Interview guides, job stories, synthesis with quotes and prevalence | Transcripts or raw notes |
+| Write the PRD and the updates | [pm-essentials](plugins/pm-essentials/) | PRD, meeting notes, stakeholder updates, competitive analysis | A feature brief; your goals |
+| Plan the quarter | [pm-planning](plugins/pm-planning/) | OKRs, RICE/MoSCoW/Kano prioritisation, roadmap narrative | A backlog and a company goal |
+| Ship the sprint and the launch | [pm-delivery](plugins/pm-delivery/) | Sprint plans, tech specs, A/B test plans, launch checklists | Stories, capacity, dates |
+| Read the numbers | [pm-data](plugins/pm-data/) | Metrics frameworks, cohort and churn analysis, dashboard briefs | Your metrics or a CSV |
+| Watch the market | [pm-strategy](plugins/pm-strategy/) | Competitor teardowns, signal tracking, stakeholder influence maps | Competitor names and sources |
+| Launch and sell it | [pm-gtm](plugins/pm-gtm/) | GTM plans, content calendars, email campaigns | A product and an audience |
+| Keep the customers | [pm-cs](plugins/pm-cs/) | Health scorecards, QBR decks, churn analysis, renewal playbooks | Account data, close notes |
+| Make the hard call | [pm-decisions](plugins/pm-decisions/) | Typed ship-or-slip, renew-or-churn, hire-or-pass calls with probabilities | The decision's real state |
+| Escape the average answer | [pm-thinking](plugins/pm-thinking/) | Red-teaming, five clashing minds, decision panels | A plan or question worth attacking |
+| Read before you sign | [pm-decoders](plugins/pm-decoders/) | Leases, bills, benefits and contracts decoded with the money maths | The document itself |
+| Land the next job | [pm-jobsearch](plugins/pm-jobsearch/) | JD decoding, outreach, interview prep, follow-up sequences | The JD and your CV |
+| 用中文工作 | [pm-china-work](plugins/pm-china-work/) | 周报、述职、复盘，中国职场的写法 | 你的工作记录 |
+<!-- WHAT-YOU-CAN-DO:END -->
+
+Install any bundle: `/plugin install pm-decoders@pm-claude-skills`, or `npx pm-claude-skills add --bundle pm-decoders`. All 152 bundles: [`plugins/`](plugins/) · every skill: **[SKILLS.md](SKILLS.md)** · chain them: [WORKFLOWS.md](WORKFLOWS.md)
 
 ## 🇨🇳 中文用户
 
@@ -138,7 +163,7 @@ An honest summary of what is checked, measured and still unreviewed, computed fr
 - **It rewrites itself, in public:** the weakest skills are periodically rewritten by a model and kept only if a judge scores the rewrite higher; every attempt, including the losses, is in the [evolution log](EVOLUTION.md).
 - **Honesty rules baked in:** decoders end with a not-advice line ([the severity scale](docs/severity-scale.md)), calculators name what they do not model, simulators debrief out of character. PM Skills is not a substitute for a professional.
 
-Privacy: off by default; skills, the CLI and exports send nothing ([docs/TELEMETRY.md](docs/TELEMETRY.md) · [SECURITY.md](SECURITY.md)). Verify a release: `npx pm-claude-skills verify --release` (signed SBOM, Sigstore provenance).
+**Privacy, stated plainly:** everything installable runs locally. Skills are inert markdown on your machine; the CLI, the exports and the local MCP server send nothing anywhere, and telemetry is off unless you set `PM_SKILLS_TELEMETRY=1` (skill name only, never content). The two things that do leave your machine are your prompts to whichever model provider you chose, and requests to the hosted playground or hosted MCP if you opt to use them. Full statements: [docs/TELEMETRY.md](docs/TELEMETRY.md) · report a vulnerability: [SECURITY.md](SECURITY.md) · licence: [MIT](LICENSE). Verify a release: `npx pm-claude-skills verify --release` (signed SBOM, Sigstore provenance).
 
 ## 🤝 Contributing
 

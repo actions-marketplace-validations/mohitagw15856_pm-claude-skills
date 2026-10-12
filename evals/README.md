@@ -62,3 +62,31 @@ Keep inputs short but representative of how the skill is actually used.
 - Scores are an LLM judge's opinion, not ground truth — treat them as a comparative signal.
 - The judge sees the skill's stated purpose and the output, not the model name (reduces bias).
 - Re-run after model upgrades; numbers drift.
+
+## Contract checks (offline, per skill)
+
+Alongside the judged evals above, a skill can carry **deterministic pass criteria** that run on every PR with no API key: `skills/<name>/evals.json`, or `evals/checks/<name>.json` for checks kept out of the npm payload. Format:
+
+```json
+{
+  "skill": "prd-template",
+  "cases": [
+    {
+      "name": "feature brief becomes a structured PRD",
+      "prompt": "Write the PRD for this brief: ...",
+      "pass": {
+        "must_include": ["Problem", "Success Metrics"],
+        "must_match": ["requirements|open question"],
+        "forbid": ["[insert", "lorem ipsum"],
+        "min_lines": 25
+      }
+    }
+  ]
+}
+```
+
+- **Offline (default, CI)**: `node scripts/run-skill-checks.mjs` applies the criteria to the skill's recorded example (`examples/<skill>-example.md`), so drift between a skill's output contract, its example and its checks fails the build. `min_lines` is skipped offline. CI runs `--changed` for the skills a PR touches.
+- **Live (opt-in, costs tokens)**: `node scripts/run-skill-checks.mjs --live --skill <name>` runs each case's prompt against the model with the skill loaded (`ANTHROPIC_API_KEY` required) and applies the full criteria, `min_lines` included.
+- `must_match` entries are JavaScript regular expressions, matched case-insensitively.
+
+Seed checks exist for the flagships (`prd-template`, `lease-decoder`, `stakeholder-update`, `ship-or-slip`, `cn-weekly-report`); add more in either location and CI picks them up.

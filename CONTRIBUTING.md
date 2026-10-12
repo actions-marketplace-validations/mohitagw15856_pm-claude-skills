@@ -244,3 +244,10 @@ Open a [Discussion](../../discussions) or raise an [Issue](../../issues). Happy 
 ---
 
 *Thank you for contributing. Every skill added here saves someone an hour they'd rather spend on something else.*
+
+## Evidence conventions
+
+Two light conventions keep skill output honest and checkable; both are documented in [SKILL-AUTHORING-STANDARD.md](SKILL-AUTHORING-STANDARD.md):
+
+- **Assumptions and gaps**: a skill's output template should end with two to four bullets naming what was assumed because the input did not say, and what missing information would most change the output. Expected for new skills; see `prd-template` or `lease-decoder` for the wording.
+- **Contract checks**: a skill can ship deterministic pass criteria (`evals.json` next to the SKILL.md, or `evals/checks/<name>.json`) that CI runs offline for changed skills; format in [evals/README.md](evals/README.md). A live mode exists for authors with an API key.

@@ -131,7 +131,7 @@ The product-management core first, then the bundles everyone borrows. Each row i
 | 用中文工作 | [pm-china-work](plugins/pm-china-work/) | 周报、述职、复盘，中国职场的写法 | 你的工作记录 |
 <!-- WHAT-YOU-CAN-DO:END -->
 
-Install any bundle: `/plugin install pm-decoders@pm-claude-skills`, or `npx pm-claude-skills add --bundle pm-decoders`. All 152 bundles: [`plugins/`](plugins/) · every skill: **[SKILLS.md](SKILLS.md)** · chain them: [WORKFLOWS.md](WORKFLOWS.md)
+Install any bundle: `/plugin install pm-decoders@pm-claude-skills`, or `npx pm-claude-skills add --bundle pm-decoders`. All 152 bundles with every skill and install command: **[docs/catalogue.md](docs/catalogue.md)** · every skill in one page: [SKILLS.md](SKILLS.md) · chain them: [WORKFLOWS.md](WORKFLOWS.md)
 
 ## 🇨🇳 中文用户
 

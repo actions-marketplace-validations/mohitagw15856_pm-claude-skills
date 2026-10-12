@@ -1,3 +1,5 @@
+<sub>**English** · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [한국어](README.ko.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md)</sub>
+
 # 🧠 PM Skills: Professional Agent Skills for Claude, ChatGPT, Gemini, Cursor, Codex & Hermes
 
 > **One request to your AI, one finished deliverable back: the PRD, the stakeholder update and the decision call, at a senior product manager's standard.**

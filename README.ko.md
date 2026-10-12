@@ -1,4 +1,8 @@
+<sub>[English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · **한국어** · [日本語](README.ja.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md)</sub>
+
 # PM Skills: 1,285개의 전문 Agent Skills, 한국어로 물어보면 됩니다
+
+> 이 번역은 기계 번역의 도움을 받아 관리됩니다. 원어민의 수정 PR을 환영합니다. 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요.
 
 <p align="center">
   <a href="README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <b>한국어</b> · <a href="SKILLS.md">전체 스킬</a> · <a href="CHANGELOG.md">변경 내역</a>

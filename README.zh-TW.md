@@ -1,4 +1,8 @@
+<sub>[English](README.md) · [简体中文](README.zh-CN.md) · **繁體中文** · [한국어](README.ko.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md)</sub>
+
 # PM Skills：1,285 個專業 Agent Skills，用中文提問就能用
+
+> 本翻譯以機器輔助維護，歡迎母語者透過 PR 修正；方法見 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 <p align="center">
   <a href="https://mohitagw15856.github.io/pm-claude-skills/live/season-tw.html">

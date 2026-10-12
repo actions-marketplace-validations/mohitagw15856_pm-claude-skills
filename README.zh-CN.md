@@ -1,3 +1,5 @@
+<sub>[English](README.md) · **简体中文** · [繁體中文](README.zh-TW.md) · [한국어](README.ko.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md)</sub>
+
 # PM Skills：专业 Agent Skills，用中文提问就能用
 
 > **公司要裁员，你不知道该拿多少补偿；明天要开需求评审，PRD 还缺一半；下个月公务员面试，没人陪你练。**

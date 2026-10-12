@@ -2,6 +2,22 @@
 
 Complete guide to installing and using PM Claude Skills.
 
+## The fast path: guided setup
+
+One command detects which supported agents are on your machine, lets you pick agents and bundles, shows the exact plan before writing anything, backs up any existing files it would overwrite, and records what it did so it can be updated or removed later:
+
+```bash
+npx pm-claude-skills setup
+```
+
+- **Non-interactive** (CI, scripts): `npx pm-claude-skills setup --yes --agents claude,cursor --bundle pm-essentials,pm-decoders`
+- **Preview only**: add `--dry-run` to see the plan and write nothing
+- **Refresh to the current library version**: `npx pm-claude-skills update`
+- **Remove it all**: `npx pm-claude-skills uninstall` removes only files this library wrote; your own skills and rules stay. Backups live under `~/.pm-skills/backups/`.
+- **MCP** (optional, Claude Code): `claude mcp add pm-skills -- npx -y -p pm-claude-skills pm-claude-skills-mcp`
+
+Supported agents are the ones `npx pm-claude-skills list` names (Claude Code, Hermes, Codex, OpenClaw, Cursor, Windsurf, Aider, Kilo Code, Trae, Qoder, Lingma, CodeBuddy); each uses that tool's documented skill or rule format. Tools with no local config folder (ChatGPT, Gemini web) take the copy-paste route via [`exports/`](../exports/) instead. The manual, per-tool steps follow below.
+
 ## Prerequisites
 
 ### Required

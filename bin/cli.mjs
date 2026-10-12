@@ -104,6 +104,9 @@ function parse(argv) {
     else if (a === '--dry-run') out.dryRun = true;
     else if (a === '--lite') out.lite = true;
     else if (a === '--no-profile') out.noProfile = true;
+    else if (a === '--yes' || a === '-y') out.yes = true;
+    else if (a === '--no-backup') out.noBackup = true;
+    else if (a === '--all-skills') out.allSkills = true;
     else if (a === '--check') out.check = true;
     else if (a === '--json') out.json = true;
     else if (a === '--help' || a === '-h') out.help = true;
@@ -429,6 +432,189 @@ function add(opts) {
   }
 }
 
+// ── setup / uninstall / update ────────────────────────────────────────────────
+// A guided flow around `add`: detect agents, pick bundles, show the plan, back
+// up anything we overwrite, record what we did so uninstall/update can undo or
+// refresh it. State lives in ~/.pm-skills (override with PM_SKILLS_HOME, which
+// the tests use for isolation).
+const STATE_DIR = process.env.PM_SKILLS_HOME || join(homedir(), '.pm-skills');
+const MANIFEST = join(STATE_DIR, 'installs.json');
+const readManifest = () => { try { return JSON.parse(readFileSync(MANIFEST, 'utf8')); } catch { return { installs: {} }; } };
+const writeManifest = (m) => { mkdirSync(STATE_DIR, { recursive: true }); writeFileSync(MANIFEST, JSON.stringify(m, null, 2) + '\n'); };
+
+// Best-effort signs that an agent is used on this machine or in this project.
+function detectAgents() {
+  const home = homedir(), cwd = process.cwd();
+  const marks = {
+    claude: [join(home, '.claude')], hermes: [join(home, '.hermes')],
+    codex: [join(home, '.codex')], openclaw: [join(home, '.openclaw')],
+    cursor: [join(home, '.cursor'), join(cwd, '.cursor')],
+    windsurf: [join(home, '.codeium', 'windsurf'), join(cwd, '.windsurf')],
+    aider: [join(home, '.aider.conf.yml'), join(cwd, '.aider.conf.yml')],
+    kilocode: [join(cwd, '.kilocode')],
+    trae: [join(home, '.trae'), join(cwd, '.trae')], qoder: [join(home, '.qoder'), join(cwd, '.qoder')],
+    lingma: [join(home, '.lingma'), join(cwd, '.lingma')], codebuddy: [join(home, '.codebuddy'), join(cwd, '.codebuddy')],
+  };
+  return AGENTS.map((a) => {
+    const hit = (marks[a] || []).find((p) => existsSync(p));
+    return { agent: a, detected: !!hit, reason: hit || '' };
+  });
+}
+
+function librarySkillNames() {
+  const dir = join(PKG_ROOT, 'skills');
+  return readdirSync(dir).filter((n) => existsSync(join(dir, n, 'SKILL.md')));
+}
+
+function skillCountFor(bundle) {
+  const only = bundleFilter(bundle);
+  const names = librarySkillNames();
+  return only ? names.filter((n) => only.has(n)).length : names.length;
+}
+
+function backupTarget(agent, target) {
+  if (!existsSync(target) || !readdirSync(target).length) return null;
+  const ts = new Date().toISOString().replace(/[:.]/g, '-');
+  const dest = join(STATE_DIR, 'backups', ts, agent);
+  mkdirSync(dest, { recursive: true });
+  cpSync(target, dest, { recursive: true });
+  return dest;
+}
+
+async function askLine(q) {
+  const rl = (await import('node:readline/promises')).createInterface({ input: process.stdin, output: process.stdout });
+  const a = await rl.question(q); rl.close(); return a.trim();
+}
+
+async function setup(opts) {
+  const nonInteractive = opts.yes || !process.stdin.isTTY;
+  let agents = (opts.agents || opts.agent || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const detected = detectAgents();
+  if (!agents.length) {
+    const found = detected.filter((d) => d.detected);
+    if (nonInteractive) {
+      if (!found.length) { console.error('Error: no agents detected. Pass --agents <a,b> (see `list`).'); process.exit(2); }
+      agents = found.map((d) => d.agent);
+    } else {
+      console.log('Detected on this machine:');
+      for (const d of detected) console.log(`  ${d.detected ? '✓' : ' '} ${d.agent}${d.detected ? `  (${d.reason})` : ''}`);
+      const a = await askLine(`Install for which agents? [${found.map((d) => d.agent).join(',') || 'none detected; name them'}]: `);
+      agents = (a || found.map((d) => d.agent).join(',')).split(',').map((s) => s.trim()).filter(Boolean);
+    }
+  }
+  for (const a of agents) if (!AGENTS.includes(a)) { console.error(`Error: unknown agent "${a}". Agents: ${AGENTS.join(', ')}`); process.exit(2); }
+  if (!agents.length) { console.error('Nothing to do: no agents chosen.'); process.exit(2); }
+
+  let bundle = opts.bundle || '';
+  if (!bundle && !opts.allSkills && !nonInteractive) {
+    const b = await askLine('Bundles to install (comma-separated, e.g. pm-essentials,pm-decoders; empty = the whole library): ');
+    bundle = b;
+  }
+  const n = skillCountFor(bundle || undefined);
+  if (bundle && !n) { console.error(`Error: no skills matched bundle(s) "${bundle}".`); process.exit(2); }
+
+  // The plan, before anything is written.
+  console.log(`\nPlan (library ${VERSION}):`);
+  const plans = agents.map((agent) => {
+    if (opts.target && agents.length > 1) { console.error('Error: --target works with a single agent.'); process.exit(2); }
+    const target = resolve(opts.target || defaultTarget(agent));
+    const existing = existsSync(target) ? readdirSync(target).length : 0;
+    const willBackup = existing > 0 && !opts.noBackup;
+    console.log(`  ${agent}: ${n} skill(s)${agent === 'claude' ? ' + subagents, commands and output styles' : ''} -> ${target}`);
+    if (existing) console.log(`    ${existing} item(s) already there${willBackup ? `; backed up first to ${join(STATE_DIR, 'backups')}` : ' (no backup: --no-backup)'}`);
+    return { agent, target, willBackup };
+  });
+  if (opts.dryRun) { console.log('\n[dry-run] nothing written.'); return; }
+  if (!nonInteractive) {
+    const ok = await askLine('\nApply this plan? [y/N]: ');
+    if (!/^y(es)?$/i.test(ok)) { console.log('Nothing written.'); return; }
+  }
+
+  const manifest = readManifest();
+  for (const p of plans) {
+    const backup = p.willBackup ? backupTarget(p.agent, p.target) : null;
+    if (backup) console.log(`  backed up ${p.agent} target to ${backup}`);
+    add({ ...opts, agent: p.agent, bundle: bundle || undefined, target: p.target, dryRun: false });
+    manifest.installs[p.agent] = { target: p.target, bundle: bundle || '', lite: !!opts.lite, version: VERSION, when: new Date().toISOString() };
+  }
+  writeManifest(manifest);
+
+  console.log('\nNext steps:');
+  if (agents.includes('claude')) console.log('  • Skills over MCP too (optional):  claude mcp add pm-skills -- npx -y -p pm-claude-skills pm-claude-skills-mcp');
+  console.log('  • Restart your agent so it picks the skills up, then just describe the task.');
+  console.log('  • Later:  npx pm-claude-skills update   |   npx pm-claude-skills uninstall');
+}
+
+// Only ever removes files this library would have written: library skill names
+// (plus pm-profile and the Claude extras). Anything else in the target stays.
+function uninstallFilesFor(agent, target) {
+  const out = [];
+  const names = librarySkillNames();
+  if (NATIVE.has(agent)) {
+    for (const name of [...names, 'pm-profile']) { const p = join(target, name); if (existsSync(p)) out.push(p); }
+    if (agent === 'claude') {
+      const root = basename(target) === 'skills' ? dirname(target) : target;
+      for (const kind of ['agents', 'commands', 'output-styles']) {
+        const src = join(PKG_ROOT, kind);
+        if (!existsSync(src)) continue;
+        for (const f of readdirSync(src)) {
+          if (!f.endsWith('.md') || f === 'README.md') continue;
+          const p = join(root, kind, f); if (existsSync(p)) out.push(p);
+        }
+      }
+    }
+  } else if (agent in RULEFILE) {
+    for (const name of names) { const p = join(target, name + RULEFILE[agent]); if (existsSync(p)) out.push(p); }
+    const prof = join(target, `pm-profile${RULEFILE[agent]}`); if (existsSync(prof)) out.push(prof);
+  } else {
+    for (const name of [...names, 'pm-profile']) { const p = join(target, `${name}.md`); if (existsSync(p)) out.push(p); }
+  }
+  return out;
+}
+
+async function uninstallCmd(opts) {
+  const manifest = readManifest();
+  let entries = Object.entries(manifest.installs);
+  const asked = (opts.agents || opts.agent || '').split(',').map((s) => s.trim()).filter(Boolean);
+  if (asked.length) entries = asked.map((a) => [a, manifest.installs[a] || { target: resolve(opts.target || defaultTarget(a)) }]);
+  if (!entries.length) { console.error('Nothing recorded in ' + MANIFEST + '. Pass --agent <name> (and --target if non-default).'); process.exit(2); }
+  let total = 0;
+  const work = entries.map(([agent, rec]) => {
+    if (!AGENTS.includes(agent)) { console.error(`Error: unknown agent "${agent}".`); process.exit(2); }
+    const files = uninstallFilesFor(agent, rec.target);
+    total += files.length;
+    console.log(`${opts.dryRun ? '[dry-run] ' : ''}${agent}: ${files.length} item(s) to remove from ${rec.target}`);
+    return { agent, files };
+  });
+  if (!total) { console.log('Nothing of ours found to remove.'); return; }
+  if (opts.dryRun) return;
+  if (!opts.yes && process.stdin.isTTY) {
+    const ok = await askLine(`Remove ${total} item(s)? Only files this library wrote are listed; your own files stay. [y/N]: `);
+    if (!/^y(es)?$/i.test(ok)) { console.log('Nothing removed.'); return; }
+  }
+  for (const w of work) {
+    for (const f of w.files) rmSync(f, { recursive: true, force: true });
+    delete manifest.installs[w.agent];
+    console.log(`  removed ${w.files.length} item(s) for ${w.agent}`);
+  }
+  writeManifest(manifest);
+  console.log('Done. Backups, if any, are under ' + join(STATE_DIR, 'backups'));
+}
+
+function updateCmd(opts) {
+  const manifest = readManifest();
+  let entries = Object.entries(manifest.installs);
+  const asked = (opts.agents || opts.agent || '').split(',').map((s) => s.trim()).filter(Boolean);
+  if (asked.length) entries = entries.filter(([a]) => asked.includes(a));
+  if (!entries.length) { console.error('Nothing recorded to update. Run `setup` first, or use `add` directly.'); process.exit(2); }
+  for (const [agent, rec] of entries) {
+    console.log(`Updating ${agent} (installed ${rec.version || 'unknown'} -> ${VERSION})`);
+    add({ ...opts, agent, bundle: rec.bundle || undefined, lite: !!rec.lite, target: rec.target, dryRun: !!opts.dryRun });
+    if (!opts.dryRun) { manifest.installs[agent] = { ...rec, version: VERSION, when: new Date().toISOString() }; }
+  }
+  if (!opts.dryRun) writeManifest(manifest);
+}
+
 function list() {
   console.log('Supported agents and default targets:\n');
   // Derive from the registries above so this can't drift from what `add` accepts.
@@ -590,6 +776,9 @@ Usage:
   npx pm-claude-skills stats       # the project's public vitals (runs served, stars, benchmark)
   npx pm-claude-skills today [--lang zh|zh-TW] [--json] [--offline]   # the skill of the day, same pick as the README card
   npx pm-claude-skills reckoning   # your prediction ledger: due calls, hit rate, calibration curve, Brier score
+  npx pm-claude-skills setup       # guided install: detects your agents, shows the plan, backs up, applies ([-y|--yes] [--agents a,b] [--bundle x,y] [--no-backup] [--dry-run])
+  npx pm-claude-skills update      # refresh everything setup installed to this library version
+  npx pm-claude-skills uninstall   # remove what this library installed; your own files stay ([--agent <a>] [-y])
   npx pm-claude-skills doctor      # checkup: what's installed, what's stale, what to fix (read-only)
   npx pm-claude-skills changelog <skill>      # what changed in a skill, and when (per-skill git history)
   npx pm-claude-skills list
@@ -629,6 +818,9 @@ else if (cmd === 'search') search(opts);
 else if (cmd === 'find') find(opts);
 else if (cmd === 'changelog') changelog(opts);
 else if (cmd === 'add') add(opts);
+else if (cmd === 'setup') await setup(opts);
+else if (cmd === 'uninstall') await uninstallCmd(opts);
+else if (cmd === 'update') updateCmd(opts);
 else if (cmd === 'sync') sync(opts);
 else if (cmd === 'profile') {
   const { run } = await import('./profile.mjs');

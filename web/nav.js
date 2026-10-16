@@ -130,6 +130,7 @@
       ['firm-live.html', '🏢 The live Firm'],
       ['career.html', '🧭 Career copilot'],
       ['compile.html', '🧑‍🏫 Expert-to-skill compiler'],
+      ['use.html', '📱 Skill apps'],
       ['how.html', '❓ How do I…?'],
       ['forms.html', '📋 Forms explained'],
       ['reckoning.html', '⚖️ Reckoning'],

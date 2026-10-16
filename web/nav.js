@@ -145,6 +145,7 @@
       ['conformant.html', '🏅 Conformant Libraries'],
       ['federation.html', '🌐 The Federation'],
       ['credential.html', '🔏 Credentials'],
+      ['partners.html', '🤝 Partners'],
       ['leaderboard.html', '📊 Leaderboard'],
       ['coverage.html', '📈 Eval coverage'],
       ['benchmark.html', '🏆 Benchmark'],

@@ -147,6 +147,7 @@
       ['credential.html', '🔏 Credentials'],
       ['partners.html', '🤝 Partners'],
       ['leaderboard.html', '📊 Leaderboard'],
+      ['jobs-exam.html', '📝 Jobs exam'],
       ['coverage.html', '📈 Eval coverage'],
       ['benchmark.html', '🏆 Benchmark'],
       ['modelbench.html', '🤖 Model rankings'],

@@ -11,6 +11,7 @@ Ways to reach the PM Skills library beyond the CLI, MCP server, and browser play
 | [`chatops/`](chatops/) | **Slack & Discord** `/pmskill` slash command — one Cloudflare Worker, signature-verified | [README](chatops/README.md) |
 | [`../box/`](../box/README.md) | **Library in a box**: a Raspberry Pi or old laptop serves the whole site and a local model over its own Wi-Fi, fully offline | [README](../box/README.md) |
 | [`phone-line/`](phone-line/) | **Call a number, talk to the library** — Twilio Voice: say what you need, hear a short skill-shaped answer, say "text me" for the full skill | [README](phone-line/README.md) |
+| [`ussd/`](ussd/) | **USSD menu** for any phone, even with no data: dial a short code, pick your situation, get the first step on screen and the link by SMS (no AI model, no API bill) | [README](ussd/README.md) |
 | [`twilio/`](twilio/) | **Text a skill** over SMS / WhatsApp — run a skill from a text, get the result back | [README](twilio/README.md) |
 | [`email/`](email/) | **Email operator** — forward a thread, get the drafted artifact back in-thread | [README](email/README.md) |
 | [`framework-templates/`](framework-templates/) | **Agent framework starters** — Vercel AI SDK, OpenAI Agents SDK, LangChain/LangGraph and Mastra agents with every skill over MCP, plus PR texts for the frameworks' own examples | [README](framework-templates/README.md) |

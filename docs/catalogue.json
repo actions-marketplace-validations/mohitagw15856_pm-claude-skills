@@ -2840,27 +2840,33 @@
       "skills": [
         {
           "name": "end-of-day-report",
-          "description": "Produce an end-of-day report an unattended agent can send honestly: what shipped (verified), what is drafted or waiting, what is blocked and on whom, and tomorrow's first action."
+          "description": "Produce an end-of-day report an unattended agent can send honestly: what shipped (verified), what is drafted or waiting, what is blocked and on whom, and tomorrow's first action.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "interrupt-rules",
-          "description": "Write the between-brief alert rules for a proactive agent: exactly what may interrupt you, what waits for the next brief, and the wording of an interruption."
+          "description": "Write the between-brief alert rules for a proactive agent: exactly what may interrupt you, what waits for the next brief, and the wording of an interruption.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "morning-brief-designer",
-          "description": "Design a proactive agent's morning brief: which connected sources it reads, what earns a line, the fixed section order and length cap, and the wording rules that keep it honest."
+          "description": "Design a proactive agent's morning brief: which connected sources it reads, what earns a line, the fixed section order and length cap, and the wording rules that keep it honest.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "prepare-for-duet",
-          "description": "A readiness audit for proactive agents, useful while you are still on the waitlist: what in your memory, recurring prompts, connectors and inbox habits will help or hurt an agent that acts between your messages."
+          "description": "A readiness audit for proactive agents, useful while you are still on the waitlist: what in your memory, recurring prompts, connectors and inbox habits will help or hurt an agent that acts between your messages.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "send-approval-check",
-          "description": "The gate before an agent sends anything on your behalf: one card showing recipient, sending account, subject, attachments, and the single sentence that commits you to something, so approving the wording is never mistaken for approving the send."
+          "description": "The gate before an agent sends anything on your behalf: one card showing recipient, sending account, subject, attachments, and the single sentence that commits you to something, so approving the wording is never mistaken for approving the send.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "weekly-rollup",
-          "description": "Roll a week of daily reports and agent activity into one honest weekly summary: trajectory against goals, what shipped with proof, the recurring blocker, and what to change next week."
+          "description": "Roll a week of daily reports and agent activity into one honest weekly summary: trajectory against goals, what shipped with proof, the recurring blocker, and what to change next week.",
+          "duet_ready": "designed-for-duet"
         }
       ]
     },
@@ -3203,7 +3209,8 @@
         },
         {
           "name": "stakeholder-update",
-          "description": "Create concise executive stakeholder updates using the BLUF (Bottom Line Up Front) framework."
+          "description": "Create concise executive stakeholder updates using the BLUF (Bottom Line Up Front) framework.",
+          "duet_ready": "designed-for-duet"
         },
         {
           "name": "style-fingerprint",

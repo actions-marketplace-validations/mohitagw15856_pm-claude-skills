@@ -74,6 +74,16 @@ npx --registry=https://registry.npmmirror.com pm-claude-skills add  # 中国大�
 
 Then just say what you need: *"Decode this job ad and tell me where I am weak."* Nothing here can break your setup: a skill is a markdown file your AI reads; installing copies text files, uninstalling deletes them. [Read one first](skills/lease-decoder/SKILL.md). Per-tool instructions: [docs/installation.md](docs/installation.md) · ChatGPT and Gemini: copy from [`exports/`](https://github.com/mohitagw15856/pm-claude-skills/tree/exports) · MCP: `claude mcp add pm-skills -- npx -y -p pm-claude-skills pm-claude-skills-mcp`
 
+## 🌅 Using PM Skills with Claude Duet
+
+[Claude Duet](https://claude.com/) is Anthropic's proactive agent (US research preview, waitlist). **Most readers cannot use it yet; get ready before your invite lands**: the [pm-duet bundle](plugins/pm-duet/) designs your morning brief, your interrupt rules and the send-approval gate, and every one of its skills is useful in the ordinary Claude app today.
+
+```bash
+npx pm-claude-skills add --bundle pm-duet
+```
+
+The [7-day challenge](docs/duet/7-day-challenge.md) walks it one day at a time. The conventions ([the duet block, the status vocabulary](docs/duet/README.md)) keep unattended briefs short, cited and honest, and the [honest flags](data/duet-ready.json) say "designed for Duet" rather than tested, because nobody here has access yet. Have access? [Test a skill and get credited](.github/ISSUE_TEMPLATE/tested-on-duet.yml). How the three proactive agents compare: [docs/duet/proactive-agents.md](docs/duet/proactive-agents.md).
+
 ## 🥊 The demo
 
 <p align="center">

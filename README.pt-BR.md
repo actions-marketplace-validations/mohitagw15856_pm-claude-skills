@@ -16,7 +16,7 @@ e um informe para a liderança que eu possa enviar hoje.
 
 Seu assistente carrega [user-interview-synthesis](skills/user-interview-synthesis/SKILL.md), [prd-template](skills/prd-template/SKILL.md) e [stakeholder-update](skills/stakeholder-update/SKILL.md) e devolve os três documentos, não conselhos sobre como escrevê-los.
 
-PM Skills é uma biblioteca open source com 1295 Agent Skills: arquivos Markdown (SKILL.md) que ensinam um assistente de IA a executar uma tarefa profissional no nível de alguém sênior, de escrever um PRD a decifrar um contrato de aluguel. Cada skill traz o framework, um template de saída, checagens de qualidade e antipadrões. Licença MIT; funciona com Claude, ChatGPT, Gemini, Cursor e Codex. (PM significa Professional, não só product manager.)
+PM Skills é uma biblioteca open source com 1301 Agent Skills: arquivos Markdown (SKILL.md) que ensinam um assistente de IA a executar uma tarefa profissional no nível de alguém sênior, de escrever um PRD a decifrar um contrato de aluguel. Cada skill traz o framework, um template de saída, checagens de qualidade e antipadrões. Licença MIT; funciona com Claude, ChatGPT, Gemini, Cursor e Codex. (PM significa Professional, não só product manager.)
 
 ## ⚡ Instalação em 30 segundos
 
@@ -41,12 +41,12 @@ Uma skill é só um arquivo Markdown que sua IA lê: instalar copia arquivos de 
 | Ler antes de assinar | [pm-decoders](plugins/pm-decoders/) | Aluguéis, contas e contratos decifrados, com as contas feitas | O próprio documento |
 | Conseguir o próximo emprego | [pm-jobsearch](plugins/pm-jobsearch/) | Decifrar a vaga, outreach, preparação de entrevista | A vaga e o seu currículo |
 
-Os 152 bundles com comandos de instalação: [docs/catalogue.md](docs/catalogue.md) · todas as skills: [SKILLS.md](SKILLS.md)
+Os 153 bundles com comandos de instalação: [docs/catalogue.md](docs/catalogue.md) · todas as skills: [SKILLS.md](SKILLS.md)
 
 ## ✅ Confiança e qualidade
 
-- Toda mudança passa pelo CI: estrutura (SkillCheck L3, as 1295 skills), auditoria de segurança, checagem de duplicatas, paridade das traduções e uma bateria de injeção de prompt.
-- 389 das 1295 skills têm casos de avaliação; 28 têm notas às cegas publicadas. O que não foi medido é declarado como não medido.
+- Toda mudança passa pelo CI: estrutura (SkillCheck L3, as 1301 skills), auditoria de segurança, checagem de duplicatas, paridade das traduções e uma bateria de injeção de prompt.
+- 389 das 1301 skills têm casos de avaliação; 28 têm notas às cegas publicadas. O que não foi medido é declarado como não medido.
 - Skills jurídicas, fiscais e trabalhistas terminam com um aviso claro e indicam qual profissional procurar; não substituem um.
 - Privacidade: tudo roda localmente. As skills, a CLI e os exports não enviam nada. Detalhes: [docs/TELEMETRY.md](docs/TELEMETRY.md) · [SECURITY.md](SECURITY.md) · licença: [MIT](LICENSE)
 

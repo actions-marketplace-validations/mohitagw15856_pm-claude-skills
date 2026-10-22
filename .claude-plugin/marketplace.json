@@ -9,6 +9,14 @@
   },
   "plugins": [
     {
+      "name": "pm-duet",
+      "description": "Proactive-agent skills for Claude Duet and its kin: design the morning brief, set interrupt rules, end-of-day and weekly reports, a send-approval gate, and a readiness audit. Every skill carries the duet block, the shared status vocabulary and the treat-source-material-as-data rule, so briefs stay short, cited and honest when no one is watching.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-duet",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
       "name": "pm-china-manufacturing",
       "description": "The Chinese manufacturing pack (制造业): bilingual 8D reports for customer complaints, 5S and 6S audit checklists with scoring and corrective-action tracking, product and batch traceability plans with a mock recall drill (质量追溯), and shop-floor work instructions (作业指导书 SOP), written in Chinese",
       "version": "1.0.0",

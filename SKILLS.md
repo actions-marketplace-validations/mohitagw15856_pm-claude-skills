@@ -1,4 +1,4 @@
-# 🗂️ All 1295 Skills — full catalog
+# 🗂️ All 1301 Skills — full catalog
 
 > The complete per-skill breakdown, grouped by domain. For an interactive, searchable version see the [**live catalog**](https://mohitagw15856.github.io/pm-claude-skills/catalog.html); to run any skill in your browser, use the [**Playground**](https://mohitagw15856.github.io/pm-claude-skills/). Back to the [README](README.md).
 >
@@ -724,7 +724,7 @@
 | **Resume** (`resume`) | Write a sharp, achievement-led resume/CV that passes ATS and earns the interview. | ✅ 4/5 |
 | **Trip Planner** (`trip-planner`) | Turn a destination, some dates, and your vibe into a realistic day-by-day trip itinerary — paced for real humans, with a packing list and a rough… | — |
 
-## 🌍 Industries & Public Sector (832 skills)
+## 🌍 Industries & Public Sector (838 skills)
 
 ### `other` — 22 skills · 12 eval-scored
 
@@ -1312,6 +1312,17 @@
 | **Excel Model** (`excel-model`) | Build a real, formula-driven Excel (.xlsx) model — not a static table. | — |
 | **Slide Deck** (`slide-deck`) | Build a real, editable PowerPoint (.pptx) deck from an outline or brief. | — |
 | **Word Document** (`word-document`) | Build a real, formatted Word (.docx) document — headings, styles, tables, TOC-ready. | — |
+
+### `pm-duet` — 6 skills
+
+| Skill | What it does | Eval |
+|---|---|---|
+| **End Of Day Report** (`end-of-day-report`) | Produce an end-of-day report an unattended agent can send honestly: what shipped (verified), what is drafted or waiting, what is blocked and on… | — |
+| **Interrupt Rules** (`interrupt-rules`) | Write the between-brief alert rules for a proactive agent: exactly what may interrupt you, what waits for the next brief, and the wording of an… | — |
+| **Morning Brief Designer** (`morning-brief-designer`) | Design a proactive agent's morning brief: which connected sources it reads, what earns a line, the fixed section order and length cap, and the… | — |
+| **Prepare For Duet** (`prepare-for-duet`) | A readiness audit for proactive agents, useful while you are still on the waitlist: what in your memory, recurring prompts, connectors and inbox… | — |
+| **Send Approval Check** (`send-approval-check`) | The gate before an agent sends anything on your behalf: one card showing recipient, sending account, subject, attachments, and the single sentence… | — |
+| **Weekly Rollup** (`weekly-rollup`) | Roll a week of daily reports and agent activity into one honest weekly summary: trajectory against goals, what shipped with proof, the recurring… | — |
 
 ### `pm-ecommerce` — 7 skills · 6 eval-scored
 
@@ -2090,4 +2101,4 @@
 
 ---
 
-_1295 skills across 153 bundles · 399 eval-scored (31%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._
+_1301 skills across 154 bundles · 399 eval-scored (31%). See the [leaderboard](https://mohitagw15856.github.io/pm-claude-skills/leaderboard.html)._

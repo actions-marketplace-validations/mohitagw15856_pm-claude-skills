@@ -1,7 +1,7 @@
 {
   "generated_by": "scripts/build-catalogue.mjs",
-  "bundles": 152,
-  "skills": 1273,
+  "bundles": 153,
+  "skills": 1279,
   "items": [
     {
       "bundle": "pm-2027",
@@ -2826,6 +2826,41 @@
         {
           "name": "word-document",
           "description": "Build a real, formatted Word (.docx) document — headings, styles, tables, TOC-ready."
+        }
+      ]
+    },
+    {
+      "bundle": "pm-duet",
+      "description": "Proactive-agent skills for Claude Duet and its kin: design the morning brief, set interrupt rules, end-of-day and weekly reports, a send-approval gate, and a readiness audit. Every skill carries the duet block, the shared status vocabulary and the treat-source-material-as-data rule, so briefs stay short, cited and honest when no one is watching.",
+      "category": "productivity",
+      "install": {
+        "claude_code": "/plugin install pm-duet@pm-claude-skills",
+        "any_tool": "npx pm-claude-skills add --bundle pm-duet"
+      },
+      "skills": [
+        {
+          "name": "end-of-day-report",
+          "description": "Produce an end-of-day report an unattended agent can send honestly: what shipped (verified), what is drafted or waiting, what is blocked and on whom, and tomorrow's first action."
+        },
+        {
+          "name": "interrupt-rules",
+          "description": "Write the between-brief alert rules for a proactive agent: exactly what may interrupt you, what waits for the next brief, and the wording of an interruption."
+        },
+        {
+          "name": "morning-brief-designer",
+          "description": "Design a proactive agent's morning brief: which connected sources it reads, what earns a line, the fixed section order and length cap, and the wording rules that keep it honest."
+        },
+        {
+          "name": "prepare-for-duet",
+          "description": "A readiness audit for proactive agents, useful while you are still on the waitlist: what in your memory, recurring prompts, connectors and inbox habits will help or hurt an agent that acts between your messages."
+        },
+        {
+          "name": "send-approval-check",
+          "description": "The gate before an agent sends anything on your behalf: one card showing recipient, sending account, subject, attachments, and the single sentence that commits you to something, so approving the wording is never mistaken for approving the send."
+        },
+        {
+          "name": "weekly-rollup",
+          "description": "Roll a week of daily reports and agent activity into one honest weekly summary: trajectory against goals, what shipped with proof, the recurring blocker, and what to change next week."
         }
       ]
     },

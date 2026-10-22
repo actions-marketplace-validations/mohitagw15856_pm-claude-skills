@@ -9,6 +9,17 @@ each new wave of skills bumps the **major** version, extensions and fixes bump
 
 ## [Unreleased]
 
+## [83.1.0] - Duet-ready - 2026-10-22
+
+**1301 skills · 153 bundles** (from 1295 · 152 at v83.0.0).
+
+### Added
+- **The Duet-ready convention** (#446): an optional `duet` frontmatter block (brief length, cited sources, draft-by-default, approval verbs, a cadence with its plan-limits cost) and a shared [status vocabulary](docs/duet/status-vocabulary.md) that bans "done": terminal states are shipped (verified) or approved (a named yes). Three honesty tiers; everything ships at "designed for Duet" because nobody here has access yet, and that is stated rather than hidden.
+- **pm-duet** (6, #447): `morning-brief-designer`, `interrupt-rules`, `end-of-day-report`, `weekly-rollup`, `send-approval-check` (recipient, account, subject, attachments and the committing sentence quoted; approving wording is not approving the send) and `prepare-for-duet` (a readiness audit worth doing on the waitlist). Each with a curated eval case.
+- **Connected-source variants** (#447): `stakeholder-update`, `changelog-generator` and `discovery-interview-guide` can read connected threads, events and repos and cite each claim, with sending always a separate approval.
+- **Surfacing** (#450): `data/duet-ready.json` (the tier registry), ⚡ flags and a `duet_ready` field in the catalogue, and a waitlist-first Duet section in the README.
+- **Community kit** (#448): a "Tested on Duet" issue form with named credit, the [7-day Duet challenge](docs/duet/7-day-challenge.md), the brief gallery with a monthly pick, a 30-second demo storyboard, a sourced [comparison of Claude Duet, OpenAI Dots and Meta Muse](docs/duet/proactive-agents.md), and a before-and-after morning-brief mock labelled as mock data.
+
 ## [83.0.0] - For everyone, everywhere - 2026-10-17
 
 **1295 skills · 152 bundles** (from 1285 · 152 at v82.0.0). No Anthropic credit is spent by default from this release on.

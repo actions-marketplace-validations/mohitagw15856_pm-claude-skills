@@ -1672,6 +1672,10 @@
     {
       "skill": "agent-spending-mandate",
       "input": "I want my AI agent to reorder office supplies for our 6-person team: printer paper, ink, coffee and cleaning products, from our usual two suppliers. Monthly budget about £250. Nothing on subscription."
+    },
+    {
+      "skill": "agent-project-file",
+      "input": "I want an agent to spend two weeks producing a competitor landscape report on UK meal-kit companies: 8 competitors, pricing, positioning, a final 10-page report. I'll check in on Mondays and Thursdays."
     }
   ]
 }

@@ -1,7 +1,7 @@
 # 🧭 Disambiguation — you want *this* one, not that one
 
 > **Generated — do not edit.** Run `node scripts/build-disambiguation.mjs`.
-> 1313 live skills across 153 bundles, plus 12 retired names that still resolve.
+> 1314 live skills across 153 bundles, plus 12 retired names that still resolve.
 
 At this size the hard part is not finding *a* skill — it is telling two similar ones apart, and
 knowing whether the thing you are about to write already exists under a different noun.
@@ -125,7 +125,7 @@ assuming the skill you want is missing.
 - `the-worry-decompiler` · pm-focus — Turn an anxious spiral into a concrete list — separate the specific worries from the vague dread, sort what you can act on from what you can't, and get one action.
 - `the-year-of-firsts` · pm-grief — Get through the first year after losing someone — the birthdays, holidays, and ordinary triggers that ambush you — with a gentle plan for the hard days instead of being blindsided.
 
-**`agent-*`** (11)
+**`agent-*`** (12)
 
 - `agent-design-review` · pm-ai — Review an LLM agent design and find where it will be unreliable, expensive, or unsafe.
 - `agent-era-pricing` · pm-agentnative — Redesign seat-based pricing for the agent era — when one human runs ten agents, per-seat models collapse.
@@ -134,6 +134,7 @@ assuming the skill you want is missing.
 - `agent-kill-switch-plan` · pm-duet — Prepare, before you need it, the runbook for stopping a proactive agent that is misbehaving: how to pause it in seconds, which connections to revoke in what order, how to check what it did, who to tell, and how to restart safely.
 - `agent-negotiation-brief` · pm-agentnative — Brief an AI agent that will negotiate for you with another party's agent or a person (a refund, a price, a meeting time, a contract term): your goal, your opening, your limits, your walk-away point, what it must never reveal, and when it must come back to you.
 - `agent-observability-spec` · pm-agentops — Specify the tracing, metrics, and alerting for an AI agent or LLM feature in production.
+- `agent-project-file` · pm-agentnative — Set up the project file an AI agent keeps for work that runs over days or weeks: the goal, the definition of done, milestones, the current state, decisions made, open questions, and the exact point to resume from after an interruption.
 - `agent-readiness-audit` · pm-agentnative — Audit whether AI agents can actually use your product — docs, APIs, onboarding, errors, and discoverability, evaluated from a non-human user's perspective.
 - `agent-severance` · pm-2027 — Offboard an AI agent the way you'd offboard an employee — inventory what it knew and touched, export then purge its memory, revoke every credential and access grant, and write the handover for its successor (human or agent).
 - `agent-spec` · pm-ai — Specify an autonomous or tool-using AI agent before building it.

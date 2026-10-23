@@ -16,6 +16,10 @@ web/catalog.html
 web/leaderboard.html
 web/community.html
 web/coverage.html
+# Small-model badges (scripts/build-small-model-badges.mjs, built at deploy)
+web/badge/small-model/
+# Rule-change watcher state for local runs (the workflow keeps it in its issue)
+data/rule-sources-state.json
 web/skill/
 web/sitemap.xml
 web/robots.txt

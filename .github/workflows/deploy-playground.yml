@@ -106,6 +106,8 @@ jobs:
 
       - name: One ZIP per skill for claude.ai and Claude Duet (web/skill-zip/)
         run: node scripts/build-skill-zips.mjs
+      - name: Small-model badges from recorded local runs (web/badge/small-model/)
+        run: node scripts/build-small-model-badges.mjs
 
       # Chinese pages for Baidu, Bing China and 360: /zh/<skill>.html and a hub,
       # appended to the sitemap built above.

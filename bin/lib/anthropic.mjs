@@ -2,7 +2,8 @@
 // Shared by the GitHub Action runner, the eval harness, and skill generation.
 // No SDK, no install — just a thin POST wrapper.
 
-const API_URL = 'https://api.anthropic.com/v1/messages';
+// ANTHROPIC_BASE_URL points at a compatible server or a local stand-in for tests.
+const API_URL = (process.env.ANTHROPIC_BASE_URL || 'https://api.anthropic.com').replace(/\/$/, '') + '/v1/messages';
 
 /**
  * Call the Anthropic Messages API and return the concatenated text output.

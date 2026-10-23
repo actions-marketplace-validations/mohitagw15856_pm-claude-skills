@@ -18,6 +18,9 @@
   .tbl th { color: var(--muted); font-weight: 500; font-size: 12px; }
   .btn { display: inline-block; border-radius: 9px; padding: 8px 13px; background: var(--accent); color: #fff; text-decoration: none; margin-top: 8px; }
   ol.how { line-height: 1.7; padding-left: 20px; }
+  .hack { border: 1px solid var(--border); border-radius: 14px; background: var(--panel); padding: 16px 18px; margin: 16px 0; }
+  .hack h3 { margin: 4px 0 6px; font-size: 18px; }
+  .hack ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -26,6 +29,11 @@
   <h1>🏆 The Skill Cup</h1>
   <p class="lead">Each month, one theme. Write the best new skill for it. Entries are scored the way the library scores itself, with no popularity vote. The winner gets a permanent line on this page and a badge on the skill. Prizes are funded month by month by sponsors.</p>
   <section class="now" id="now"><p class="muted">Loading…</p></section>
+  <section id="hack" aria-labelledby="hackHead">
+    <h2 id="hackHead">⚡ The quarterly Skill Hack</h2>
+    <p class="lead">Once a quarter, a bigger build: a pack of 2 to 4 skills that work together on one theme, solo or in a team of up to three. Same free checks and the same blind judge as the Cup; the pack scores the mean of its skills. The winning pack ships as a named starter pack.</p>
+    <div class="hack" id="hackNow"><p class="muted">Loading…</p></div>
+  </section>
   <h2>How to enter</h2>
   <ol class="how">
     <li>Write <code>skills/&lt;your-skill&gt;/SKILL.md</code> on this month's theme. The <a href="compile.html">expert-to-skill compiler</a> builds one from your answers.</li>
@@ -59,6 +67,19 @@
       return x.winner === 'none' ? '<tr><td>' + esc(x.month) + '</td><td>' + esc(x.theme) + '</td><td class="muted">no entries</td><td></td></tr>' : '<tr><td>' + esc(x.month) + '</td><td>' + esc(x.theme) + '</td><td>' + who(x.winner.author) + ' · <a href="' + REPO + '/pull/' + encodeURIComponent(x.winner.pr) + '">' + esc(x.winner.skill) + '</a></td><td>' + Number(x.winner.score).toFixed(2) + '</td></tr>';
     }).join('') + '</tbody></table>' : '<p class="muted">The first winner is crowned on ' + esc(c.closes) + '. Coming up: ' + d.themes.slice(0, 3).map(function (t) { return esc(t.theme); }).join(' · ') + '.</p>';
   }).catch(function () { document.getElementById('now').innerHTML = '<p class="muted">Could not load the Cup.</p>'; });
+  // The quarterly Skill Hack: the running quarter, or the next one, then what follows.
+  fetch('skill-hack.json').then(function (r) { return r.json(); }).then(function (d) {
+    var today = new Date().toISOString().slice(0, 10), hs = d.hacks || [];
+    var i = hs.findIndex(function (h) { return h.closes >= today; });
+    var box = document.getElementById('hackNow');
+    if (i < 0) { box.innerHTML = '<p class="muted">The next quarters are being set. <a href="' + REPO + '/blob/main/docs/skill-hack.md">Read the rules</a>.</p>'; return; }
+    var h = hs[i], open = h.opens <= today;
+    var days = Math.max(0, Math.ceil((new Date((open ? h.closes : h.opens) + 'T' + (open ? '23:59:59' : '00:00:00') + 'Z') - Date.now()) / 86400000));
+    box.innerHTML = '<p class="muted">' + esc(h.quarter) + ' · ' + esc(h.opens) + ' to ' + esc(h.closes) + ' · ' + (open ? days + ' day' + (days === 1 ? '' : 's') + ' left' : 'opens in ' + days + ' day' + (days === 1 ? '' : 's')) + '</p>' +
+      '<h3>' + esc(h.theme) + '</h3><p>' + esc(h.brief) + '</p>' +
+      (hs.length > i + 1 ? '<p class="muted">Coming up:</p><ul>' + hs.slice(i + 1, i + 4).map(function (n) { return '<li>' + esc(n.quarter) + ': ' + esc(n.theme) + '</li>'; }).join('') + '</ul>' : '') +
+      '<a class="btn" href="' + REPO + '/blob/main/docs/skill-hack.md">Rules and how to enter</a>';
+  }).catch(function () { document.getElementById('hackNow').innerHTML = '<p class="muted">Could not load the Skill Hack schedule.</p>'; });
 })();
 </script>
 </body>

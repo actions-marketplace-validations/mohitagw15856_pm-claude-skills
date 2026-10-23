@@ -20,6 +20,8 @@ const d = JSON.parse(readFileSync(FILE, 'utf8'));
 // Funded prizes (config/cup-prizes.json), shown with the month they belong to.
 const PRIZES = existsSync(join(root, 'config', 'cup-prizes.json')) ? JSON.parse(readFileSync(join(root, 'config', 'cup-prizes.json'), 'utf8')).prizes || [] : [];
 const prizeLine = (month) => PRIZES.filter((p) => p.month === month).map((p) => `${p.currency === 'USD' ? '$' : ''}${p.amount}${p.currency && p.currency !== 'USD' ? ' ' + p.currency : ''} for the ${p.track && p.track !== 'overall' ? (LANGUAGE_NAMES[p.track] || p.track) + ' track' : 'winner'}${p.sponsor ? `, sponsored by ${p.sponsorUrl ? `[${p.sponsor}](${p.sponsorUrl})` : p.sponsor}` : ''}`).join('; ');
+// The quarterly Skill Hack (data/skill-hack.json, rules in docs/skill-hack.md).
+const HACKS = existsSync(join(root, 'data', 'skill-hack.json')) ? JSON.parse(readFileSync(join(root, 'data', 'skill-hack.json'), 'utf8')).hacks || [] : [];
 const check = process.argv.includes('--check');
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -94,6 +96,16 @@ const md = [
   '',
   cur.entries.length ? '| Rank | Skill | Language | By | Score | PR |\n|---|---|---|---|---|---|\n' + cur.entries.map((e, i) => `| ${i + 1} | \`${e.skill}\` | ${LANGUAGE_NAMES[e.lang] || 'English'} | ${user(e.author)} | ${e.score.toFixed(2)} | [#${e.pr}](${REPO}/pull/${e.pr}) |`).join('\n') : 'No entries yet. The first one sets the bar.',
   '',
+  ...(HACKS.length ? [
+    '## The quarterly Skill Hack',
+    '',
+    'Once a quarter, a bigger build: a **pack of 2 to 4 skills** that work together on one theme, entered alone or as a team of up to three. Packs pass the same free checks and are scored with the same blind judge and rubric as the Cup; the pack\'s score is the mean of its skills\' scores. The winning pack ships as a named starter pack. Rules: [docs/skill-hack.md](docs/skill-hack.md). Enter with `[Hack]` in the pull request title.',
+    '',
+    '| Quarter | Dates | Theme | Winner |',
+    '|---|---|---|---|',
+    ...HACKS.map((h) => `| ${h.quarter} | ${h.opens} → ${h.closes} | ${h.theme} | ${!h.winner ? '' : h.winner === 'none' ? 'no entries' : `${h.winner.authors.map(user).join(', ')} · \`${h.winner.pack}\` ([#${h.winner.pr}](${REPO}/pull/${h.winner.pr})) · ${h.winner.score.toFixed(2)}`} |`),
+    '',
+  ] : []),
   '## Requested skills (always on-theme)',
   '',
   (d.requests || []).length

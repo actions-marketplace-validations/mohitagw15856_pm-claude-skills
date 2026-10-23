@@ -16,6 +16,17 @@ Skills that help people read, check and act on medical letters, bills, test resu
 
 No entries yet. The first one sets the bar.
 
+## The quarterly Skill Hack
+
+Once a quarter, a bigger build: a **pack of 2 to 4 skills** that work together on one theme, entered alone or as a team of up to three. Packs pass the same free checks and are scored with the same blind judge and rubric as the Cup; the pack's score is the mean of its skills' scores. The winning pack ships as a named starter pack. Rules: [docs/skill-hack.md](docs/skill-hack.md). Enter with `[Hack]` in the pull request title.
+
+| Quarter | Dates | Theme | Winner |
+|---|---|---|---|
+| 2026-Q4 | 2026-11-01 → 2026-12-31 | Agents that act for you |  |
+| 2027-Q1 | 2027-01-01 → 2027-03-31 | Rules that changed |  |
+| 2027-Q2 | 2027-04-01 → 2027-06-30 | Small models, real work |  |
+| 2027-Q3 | 2027-07-01 → 2027-09-30 | Learning and teaching |  |
+
 ## Requested skills (always on-theme)
 
 None open. [Request a skill](https://github.com/mohitagw15856/pm-claude-skills/issues/new?labels=skill-request&title=%5BSkill%20request%5D%20); requests with 3+ 👍 become a month's theme.

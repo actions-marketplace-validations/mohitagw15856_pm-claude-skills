@@ -88,6 +88,7 @@ web/registry/
 web/partners.json
 web/skill-cup.json
 web/cup-prizes.json
+web/skill-hack.json
 web/overlays.json
 web/box.json
 web/i18n-desc/

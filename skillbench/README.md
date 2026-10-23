@@ -51,6 +51,16 @@ node skillbench/run-skillbench.mjs --models claude-sonnet-4-6 --dry-run
 
 Results append to [`results.json`](results.json) (per-model, per-task, bare + skilled + judge scores, with harness + judge versions). The **Run SkillBench** GitHub Action (manual dispatch) produces official runs.
 
+## Launch-day verdicts
+
+The day a new model ships, the owner can run the **Model Day-One report** workflow (Actions, manual only, because it spends API credit; a free route such as `modelscope:<org>/<model>` also works). It runs SkillBench on the model, then `scripts/launch-verdict.mjs` writes `skillbench/reports/verdict-<model>-<date>.md` and opens a pull request with it.
+
+The verdict goes skill by skill: **keeps helping** (the skill lifts the score by 0.25 or more), **neutral** (the model does the task about as well alone), or **hurts** (the skill lowers the score by 0.25 or more). It compares with the previous model, so a skill that stopped helping stands out. To run it on results you already have:
+
+```bash
+node scripts/launch-verdict.mjs --model claude-sonnet-4-6 --baseline claude-haiku-4-5-20251001
+```
+
 ## The Chinese task set (zh-1)
 
 [`tasks-zh.json`](tasks-zh.json) holds ten tasks written in Chinese for Chinese workplaces and daily life: the weekly report, a PRD review, a promotion defence, a WeCom announcement, a severance estimate, a labour contract check, a shenlun question, campus recruitment, a Xiaohongshu note and a WeChat article. It is scored on the same rubric and published separately at [modelbench.html?set=zh](https://mohitagw15856.github.io/pm-claude-skills/modelbench.html?set=zh), so Chinese results never overwrite the English board.

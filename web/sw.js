@@ -10,8 +10,8 @@ const V = 'pm-skills-' + (BUILD.startsWith('__') ? 'dev' : BUILD);
 const CORE = [
   './', './index.html', './styles.css', './nav.js', './i18n.js', './app.js', './providers.js',
   './find.html', './listen.html', './offline.html', './capture.html',
-  './handbook.html', './academy.html', './campaign.html', './wrapped.html',
-  './reckoning.html', './charter.html', './daily.html', './export-doc.js',
+  './handbook.html', './academy.html', './campaign.html',
+  './reckoning.html', './daily.html', './export-doc.js',
   './workspace.js', './skills.json', './manifest.json',
   './assets/product-notes.jpg', './assets/icon-192.png', './assets/icon-512.png',
 ];

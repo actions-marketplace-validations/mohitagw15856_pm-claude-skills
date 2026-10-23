@@ -54,6 +54,7 @@
     "announcements/",
     "skill-tiers.json",
     "skill-sources.json",
+    "data/lts.json",
     "workflows.json",
     "org/",
     "web/",

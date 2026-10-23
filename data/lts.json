@@ -1,0 +1,129 @@
+{
+  "policy": "docs/LTS.md",
+  "line": "2026.10",
+  "since": "2026-10-23",
+  "until": "2027-10-23",
+  "note": "Each skill's SKILL.md is frozen at sha256. A fix updates sha256 and adds a revision with a note (node scripts/lts-pin.mjs --revise); tests/checks/lts.mjs enforces this.",
+  "skills": [
+    {
+      "name": "ab-test-planner",
+      "pinned": "f26f6efd8af1a054c896c1d05dd3959ea4c1823d5b95af226f32f37970b5150a",
+      "sha256": "f26f6efd8af1a054c896c1d05dd3959ea4c1823d5b95af226f32f37970b5150a",
+      "revisions": []
+    },
+    {
+      "name": "assumption-mapper",
+      "pinned": "da5a46b846b63e984cb30bbe53cf2fea8c0f11cd5a8d1247f47247bf84278504",
+      "sha256": "da5a46b846b63e984cb30bbe53cf2fea8c0f11cd5a8d1247f47247bf84278504",
+      "revisions": []
+    },
+    {
+      "name": "churn-analysis",
+      "pinned": "fe7eafb1d4021b3fd78786933936cd7bbaa1c4eaffcaddc11fb4112d9ed00337",
+      "sha256": "fe7eafb1d4021b3fd78786933936cd7bbaa1c4eaffcaddc11fb4112d9ed00337",
+      "revisions": []
+    },
+    {
+      "name": "cohort-analysis",
+      "pinned": "8767f95e861ed54be8d02f09d4c159644a4b23042cb8594a656efaaa1a722432",
+      "sha256": "8767f95e861ed54be8d02f09d4c159644a4b23042cb8594a656efaaa1a722432",
+      "revisions": []
+    },
+    {
+      "name": "competitive-analysis",
+      "pinned": "3572bb0710ecc27a67801bc71bff1bfea3ef9bab9fcec81d432f82b0b810b704",
+      "sha256": "3572bb0710ecc27a67801bc71bff1bfea3ef9bab9fcec81d432f82b0b810b704",
+      "revisions": []
+    },
+    {
+      "name": "cs-health-scorecard",
+      "pinned": "ea7dd006e068556c7a55cd942dab631635876385c248077cef24b929c27041c1",
+      "sha256": "ea7dd006e068556c7a55cd942dab631635876385c248077cef24b929c27041c1",
+      "revisions": []
+    },
+    {
+      "name": "executive-summary",
+      "pinned": "bc89aa98d4fbc26a7a38369fe0ac6774608a84771fdf674dcf45645432b87e95",
+      "sha256": "bc89aa98d4fbc26a7a38369fe0ac6774608a84771fdf674dcf45645432b87e95",
+      "revisions": []
+    },
+    {
+      "name": "go-to-market",
+      "pinned": "96fea593e4ad4b29c2f7b2a2c54ac22d0a99258800cd3d387fffc9cd6a6f4260",
+      "sha256": "96fea593e4ad4b29c2f7b2a2c54ac22d0a99258800cd3d387fffc9cd6a6f4260",
+      "revisions": []
+    },
+    {
+      "name": "incident-postmortem",
+      "pinned": "f50e046ed3a45f789a98e966f076c3dde42b054f5489fca7ca78d99a90b91473",
+      "sha256": "f50e046ed3a45f789a98e966f076c3dde42b054f5489fca7ca78d99a90b91473",
+      "revisions": []
+    },
+    {
+      "name": "metrics-framework",
+      "pinned": "1dcc823c9d97b37dda289c287df2ff11020504632891e52d06b16c82d102a153",
+      "sha256": "1dcc823c9d97b37dda289c287df2ff11020504632891e52d06b16c82d102a153",
+      "revisions": []
+    },
+    {
+      "name": "okr-builder",
+      "pinned": "61a85318f26e8edcd42a1b420e85e40b174e8fc3d888bbf5ff4a84e231332e76",
+      "sha256": "61a85318f26e8edcd42a1b420e85e40b174e8fc3d888bbf5ff4a84e231332e76",
+      "revisions": []
+    },
+    {
+      "name": "prd-template",
+      "pinned": "2f62cc3543b0af74be50969a3dcd197fe7693e08e1e3691e2580c03d938ad748",
+      "sha256": "2f62cc3543b0af74be50969a3dcd197fe7693e08e1e3691e2580c03d938ad748",
+      "revisions": []
+    },
+    {
+      "name": "pricing-sensitivity-model",
+      "pinned": "fd911f6762f89cbb44bc5f14ff275429515b0ae207348a8cc63cd08172bac2a4",
+      "sha256": "fd911f6762f89cbb44bc5f14ff275429515b0ae207348a8cc63cd08172bac2a4",
+      "revisions": []
+    },
+    {
+      "name": "rice-prioritisation",
+      "pinned": "79ed752a117ff3859542cb1c29af0229b04ef854e76ceb9b17f951ac5ffab366",
+      "sha256": "79ed752a117ff3859542cb1c29af0229b04ef854e76ceb9b17f951ac5ffab366",
+      "revisions": []
+    },
+    {
+      "name": "roadmap-narrative",
+      "pinned": "d1fdc2ac6c7123a93c9b66badc90a9addd4776cc940748cbc046032cdd1b7a4f",
+      "sha256": "d1fdc2ac6c7123a93c9b66badc90a9addd4776cc940748cbc046032cdd1b7a4f",
+      "revisions": []
+    },
+    {
+      "name": "runway-monte-carlo",
+      "pinned": "77f3d8f05bd9afd10f710fd6b83daab6185f0918460a5b8ce7bbf997124f97ed",
+      "sha256": "77f3d8f05bd9afd10f710fd6b83daab6185f0918460a5b8ce7bbf997124f97ed",
+      "revisions": []
+    },
+    {
+      "name": "sprint-planning",
+      "pinned": "19f18712799e2af3227f77c5953064c10cc9b36f4fcd3c93ee436399c819c0ac",
+      "sha256": "19f18712799e2af3227f77c5953064c10cc9b36f4fcd3c93ee436399c819c0ac",
+      "revisions": []
+    },
+    {
+      "name": "stakeholder-update",
+      "pinned": "52f0bac6abd0cb1cf02a828f61a5ae817b489d9447a45fbccc3e362cf32122e6",
+      "sha256": "52f0bac6abd0cb1cf02a828f61a5ae817b489d9447a45fbccc3e362cf32122e6",
+      "revisions": []
+    },
+    {
+      "name": "user-story-writer",
+      "pinned": "ac6e18040c8e0dd2925ea8fff75df41dcf80fde82ed3d32d2b3642560efa54d1",
+      "sha256": "ac6e18040c8e0dd2925ea8fff75df41dcf80fde82ed3d32d2b3642560efa54d1",
+      "revisions": []
+    },
+    {
+      "name": "win-loss-analysis",
+      "pinned": "a90e5f2599376ebfdec81555ab70ecfa26dfeb8f239fc860c357cbe524409b43",
+      "sha256": "a90e5f2599376ebfdec81555ab70ecfa26dfeb8f239fc860c357cbe524409b43",
+      "revisions": []
+    }
+  ]
+}

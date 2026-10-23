@@ -13,6 +13,7 @@
 //   --skills <a,b>   only these skills (e.g. a starter pack); combines with --bundle
 //   --target <path>  override the default install directory
 //   --link           symlink instead of copy (native agents; falls back to copy)
+//   --lts            only long-term-support skills, refused unless each SKILL.md matches its pin (docs/LTS.md)
 //   --dry-run        print what would happen without writing
 import { readdirSync, existsSync, mkdirSync, rmSync, cpSync, symlinkSync, copyFileSync, statSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname, basename, resolve } from 'node:path';
@@ -20,6 +21,7 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { homedir } from 'node:os';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 import { liteify } from './lib/lite.mjs';
 import { loadProfile, profileMarkdown, PROFILE_DESCRIPTION } from './lib/profile.mjs';
 import { loadConfig, satisfies } from './lib/teamconfig.mjs';
@@ -116,6 +118,7 @@ function parse(argv) {
     if (a === '--link') out.link = true;
     else if (a === '--dry-run') out.dryRun = true;
     else if (a === '--lite') out.lite = true;
+    else if (a === '--lts') out.lts = true;
     else if (a === '--no-profile') out.noProfile = true;
     else if (a === '--yes' || a === '-y') out.yes = true;
     else if (a === '--no-backup') out.noBackup = true;
@@ -319,6 +322,23 @@ function sync(opts) {
   for (const agent of cfg.agents) add({ ...opts, agent, _only: set, lite, target: targetFor(agent) });
 }
 
+// --lts: every chosen skill must be in the LTS line (data/lts.json) and its
+// bundled SKILL.md must still have the pinned SHA-256; otherwise nothing is installed.
+function ltsGuard(only) {
+  if (!only) { console.error('Error: --lts needs --skills or --bundle, e.g. --skills prd-template --lts'); process.exit(2); }
+  let lts;
+  try { lts = JSON.parse(readFileSync(join(PKG_ROOT, 'data', 'lts.json'), 'utf8')); } catch { console.error('Error: data/lts.json is missing from this package.'); process.exit(1); }
+  const pins = new Map((lts.skills || []).map((s) => [s.name, s.sha256]));
+  const bad = [];
+  for (const name of only) {
+    if (!pins.has(name)) { bad.push(`${name} is not an LTS skill`); continue; }
+    const h = createHash('sha256').update(readFileSync(join(PKG_ROOT, 'skills', name, 'SKILL.md'))).digest('hex');
+    if (h !== pins.get(name)) bad.push(`${name}: SKILL.md does not match its LTS pin`);
+  }
+  if (bad.length) { for (const b of bad) console.error(`Error: ${b}.`); console.error(`LTS skills: ${[...pins.keys()].join(', ')}`); process.exit(1); }
+  console.log(`LTS line ${lts.line}: ${only.size} skill(s) match their pins (supported until ${lts.until}).`);
+}
+
 function add(opts) {
   const agent = opts.agent;
   if (!agent || !AGENTS.includes(agent)) {
@@ -327,6 +347,7 @@ function add(opts) {
   }
   const fromBundles = bundleFilter(opts.bundle), fromSkills = skillsFilter(opts.skills);
   const only = opts._only || (fromBundles || fromSkills ? new Set([...(fromBundles || []), ...(fromSkills || [])]) : null);
+  if (opts.lts) ltsGuard(only);
   if (opts.lite && opts.link) { console.error('Error: --lite writes condensed copies, so it cannot be combined with --link.'); process.exit(2); }
   if (opts.lite && agent in RULEFILE) console.log(`  note: --lite applies to native and generated agents; '${agent}' uses the pre-built rule files in exports/, which are installed in full.`);
   const skillsDir = join(PKG_ROOT, 'skills');
@@ -772,7 +793,7 @@ const HELP = `pm-claude-skills — install professional Agent Skills into any AI
 (This is a CLI, not a library — you don't need \`npm install\`; \`npx …\` always runs the latest.)
 
 Usage:
-  npx pm-claude-skills add --agent <${AGENTS.join('|')}> [--bundle <a,b>] [--skills <a,b>] [--target <path>] [--link] [--lite] [--dry-run]
+  npx pm-claude-skills add --agent <${AGENTS.join('|')}> [--bundle <a,b>] [--skills <a,b>] [--target <path>] [--link] [--lite] [--lts] [--dry-run]
   npx pm-claude-skills run <skill> [--text "…" | --input <file>] [--model <m>] [--out <file>]
   npx pm-claude-skills find "<describe your task>" [--json] [--limit <n>]   # ranked task→skill router (start here)
   npx pm-claude-skills search [query…] [--json] [--limit <n>]

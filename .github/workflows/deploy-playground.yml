@@ -171,6 +171,10 @@ jobs:
         run: node scripts/build-release-bundle.mjs
       - name: Build the signed community registry (web/registry/registry.json)
         run: node scripts/build-registry-bundle.mjs
+      - name: Build the skill discovery file (web/.well-known/agent-skills.json)
+        run: |
+          node scripts/build-well-known.mjs
+          node scripts/check-well-known.mjs web/.well-known/agent-skills.json --verify 50 --root .
       - name: Sign the release bundle and the registry (build provenance)
         uses: actions/attest-build-provenance@v2
         with:
@@ -293,6 +297,8 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: web
+          # For web/.well-known/ (the agent-skills.json discovery file); web/ has no other dotfiles.
+          include-hidden-files: true
 
   deploy:
     needs: build
